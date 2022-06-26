@@ -1,3 +1,5 @@
+import XboxBackground from 'assets/img/xbox-live-background.jpg'
+
 export const constants = {
     logoFontFamily: 'Roboto, sans-serif',
     logoFontSize: '2rem',
@@ -9,5 +11,7 @@ export const constants = {
 
     bodyFontFamily: 'Share Tech Mono, monospace',
     bodyFontSize: '1rem',
-    bodyLineHeight: '140%'
+    bodyLineHeight: '140%',
+
+    xboxBackground: `url(${XboxBackground})`,
 }

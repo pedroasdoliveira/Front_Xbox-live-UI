@@ -12,10 +12,12 @@ const Home = () => {
 
   return (
     <Style.Home>
-      <h1>Bem vindo a Xbox Live</h1>
+      <Style.HomeTitle>Bem vindo a Xbox Live</Style.HomeTitle>
 
-      <p>Clique no botão abaixo para fazer seu login</p>
-      <i><SiXbox onClick={handleNavigate}/></i>
+      <Style.HomeSection>
+        <Style.HomeDescription>Clique no botão abaixo para fazer seu login</Style.HomeDescription>
+        <i><SiXbox onClick={handleNavigate}/></i>
+      </Style.HomeSection>
     </Style.Home>
   )
 }

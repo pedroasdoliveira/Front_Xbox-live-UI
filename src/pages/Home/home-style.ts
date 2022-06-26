@@ -1,20 +1,39 @@
 import styled, {css} from "styled-components";
 
-export const Home = styled.section`
+export const Home = styled.main`
     ${({theme}) => css`
-        background-color: ${theme.colors.primaryBgColor};
+        background-image: ${theme.constants.xboxBackground};
+        background-repeat: no-repeat;
+        background-size: cover;
         width: 100vw;
         height: 100vh;
-        color: ${theme.colors.textColor};
         display: grid;
-        justify-content: center;
-        align-content: center;
-        grid-auto-rows: 5rem;
     `}
 `;
 
-export const HomeMain = styled.main`
+export const HomeTitle = styled.h1`
+    ${({theme}) => css`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: ${theme.colors.titleColor};
+        ${theme.mixins.logoStyle};
+    `}
+`;
+
+export const HomeSection = styled.section`
     ${() => css`
-        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1.5rem;
+    `}
+`
+
+export const HomeDescription = styled.p`
+    ${({theme}) => css`
+        font-style: oblique;
+        ${theme.mixins.bodyStyle}
     `}
 `
