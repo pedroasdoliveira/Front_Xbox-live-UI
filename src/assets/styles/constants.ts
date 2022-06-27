@@ -5,7 +5,7 @@ export const constants = {
     logoFontSize: '2rem',
     logoLineHeight: '140%',
 
-    subTitleFontFamily: 'Robobto Mono, monospace, sans-serif',
+    subTitleFontFamily: 'Roboto Mono, monospace, sans-serif',
     subTitleFontSize: '1.6rem',
     subTitleFontHeight: '140%',
 

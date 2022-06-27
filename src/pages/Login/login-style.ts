@@ -29,7 +29,7 @@ export const LoginSection = styled.section`
     ${({theme}) => css`
         padding: 1.25rem;
         width: 600px;
-        height: 400px;
+        height: auto;
         background-color: ${theme.colors.secondBgColor};
         border-radius: 15px;
     `}
