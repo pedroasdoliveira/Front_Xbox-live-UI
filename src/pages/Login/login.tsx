@@ -6,6 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const navigation = useNavigate();
 
+  const handleNavigate = () => {
+    navigation('/profiles')
+  }
+
   return (
     <Style.Login>
       <main>
@@ -32,7 +36,7 @@ const Login = () => {
               Não tem uma conta criada? <Style.LoginStrong><Link to={'/singup'}>Crie uma aqui!</Link></Style.LoginStrong>
             </Style.LoginDescription>
 
-            <Style.LoginButton type="submit">Login</Style.LoginButton>
+            <Style.LoginButton type="submit" onClick={handleNavigate}>Login</Style.LoginButton>
           </Style.LoginContent>
         </Style.LoginSection>
       </main>

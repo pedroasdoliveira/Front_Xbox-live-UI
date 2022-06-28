@@ -1,4 +1,5 @@
 import XboxBackground from 'assets/img/xbox-live-background.jpg'
+import XboxWallpaper from 'assets/img/xbox-wallpaper.png'
 
 export const constants = {
     logoFontFamily: 'Roboto, sans-serif',
@@ -14,4 +15,8 @@ export const constants = {
     bodyLineHeight: '140%',
 
     xboxBackground: `url(${XboxBackground})`,
+    xboxWallpaper: `url(${XboxWallpaper})`,
+
+    transitionEvents: 'all ease-in-out .6s',
+    transformeScale: 'scale(1.2)'
 }
