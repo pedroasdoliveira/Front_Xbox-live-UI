@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import * as Style from "./styles";
 import Avatar01 from "assets/img/avatar_1.png";
 
-const SettingsProfile = () => {
+const CreateProfile = () => {
   const navigate = useNavigate();
 
   return (
@@ -35,4 +35,4 @@ const SettingsProfile = () => {
   );
 };
 
-export default SettingsProfile;
+export default CreateProfile;

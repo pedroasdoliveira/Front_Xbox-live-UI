@@ -1,7 +1,7 @@
 import Home from "pages/Home/home";
 import Login from "pages/Login/login";
 import Profiles from "pages/Profiles/profiles";
-import SettingsProfile from "pages/Settings_Profiles";
+import CreateProfile from "pages/Settings_Profiles";
 import SingUp from "pages/SingUp/singup";
 import { useRoutes } from "react-router-dom";
 import { RoutesPath } from "types/routes";
@@ -25,8 +25,8 @@ const Router = () => {
       element: <Profiles />
     },
     {
-      path: RoutesPath.SETTINGS_PROFILES,
-      element: <SettingsProfile />
+      path: RoutesPath.CREATE_PROFILES,
+      element: <CreateProfile />
     }
   ]);
 };

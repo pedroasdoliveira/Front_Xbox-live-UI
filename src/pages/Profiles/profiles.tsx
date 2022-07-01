@@ -36,7 +36,7 @@ const Profiles = () => {
           <Style.ProfileEdit src={Edit} alt="" />
         </Style.ProfileDiv>
 
-        <Style.CreateProfile onClick={() => navigate("/profiles/settings")} src={Add} alt="" />
+        <Style.CreateProfile onClick={() => navigate("/profiles/create")} src={Add} alt="Icone de adicionar" />
 
       </Style.ProfileSection>
     </Style.Background>

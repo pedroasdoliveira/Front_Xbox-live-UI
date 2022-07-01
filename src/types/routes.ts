@@ -3,5 +3,5 @@ export enum RoutesPath {
     LOGIN = '/login',
     SINGUP = '/singup',
     PROFILES = '/profiles',
-    SETTINGS_PROFILES = '/profiles/settings'
+    CREATE_PROFILES = '/profiles/create'
 }
