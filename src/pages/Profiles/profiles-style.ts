@@ -14,18 +14,9 @@ export const Background = styled.main`
   `}
 `;
 
-export const BackIcon = styled.img`
-  ${() => css`
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    left: 25px;
-    top: 30px;
-    cursor: pointer;
-    transition: all ease-in-out 0.6s;
-    :hover {
-      transform: scale(1.2);
-    }
+export const BackIcon = styled.i`
+  ${({theme}) => css`
+    ${theme.mixins.BackIcon}
   `}
 `;
 

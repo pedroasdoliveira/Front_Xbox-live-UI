@@ -21,42 +21,42 @@ const SingUp = () => {
       <Style.SingupInput
         type='text'
         id='name'
-        placeholder='Digite o seu Nome'
+        placeholder=' Digite o seu Nome'
         required
       />
 
       <Style.SingupInput
         type='text'
         id='nickname'
-        placeholder='Crie o seu Nickname'
+        placeholder=' Crie o seu Nickname'
         required
       />
 
       <Style.SingupInput
         type='email'
         id='email'
-        placeholder='Digite o seu E-mail'
+        placeholder=' Digite o seu E-mail'
         required
       />
 
       <Style.SingupInput
         type='text'
         id='cpf'
-        placeholder='Coloque o seu CPF'
+        placeholder=' Coloque o seu CPF'
         required
       />
 
       <Style.SingupInput 
         type='password'
         id='password'
-        placeholder='Digite uma senha'
+        placeholder=' Digite uma senha'
         required
       />
 
       <Style.SingupInput 
         type='password'
         id='confirmPassword'
-        placeholder='Confirme sua senha'
+        placeholder=' Confirme sua senha'
         required
       />
 

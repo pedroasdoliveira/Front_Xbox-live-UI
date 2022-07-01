@@ -21,14 +21,14 @@ const Login = () => {
             <Style.LoginInput
               type="text"
               id="email"
-              placeholder="Digite o seu E-mail de acesso"
+              placeholder=" Digite o seu E-mail de acesso"
               required
             />
 
             <Style.LoginInput
               type="password"
               id="password"
-              placeholder="Digite sua senha de acesso"
+              placeholder=" Digite sua senha de acesso"
               required
             />
 
