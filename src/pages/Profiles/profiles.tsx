@@ -1,14 +1,11 @@
 import Edit from "assets/icon/edit_profile.svg";
 import Avatar01 from "assets/img/avatar_1.png";
+import Add from 'assets/icon/add.svg'
 import { useNavigate } from "react-router-dom";
 import * as Style from "./profiles-style";
 
 const Profiles = () => {
   const navigate = useNavigate();
-
-  const handleNavigateEdit = () => {
-    navigate("/profiles/settings");
-  };
 
   return (
     <Style.Background>
@@ -20,7 +17,7 @@ const Profiles = () => {
 
           <Style.ProfileDescription>Pedro</Style.ProfileDescription>
 
-          <Style.ProfileEdit onClick={handleNavigateEdit} src={Edit} alt="" />
+          <Style.ProfileEdit src={Edit} alt="" />
         </Style.ProfileDiv>
 
         <Style.ProfileDiv>
@@ -28,7 +25,7 @@ const Profiles = () => {
 
           <Style.ProfileDescription>Pedro</Style.ProfileDescription>
 
-          <Style.ProfileEdit onClick={handleNavigateEdit} src={Edit} alt="" />
+          <Style.ProfileEdit src={Edit} alt="" />
         </Style.ProfileDiv>
 
         <Style.ProfileDiv>
@@ -36,8 +33,11 @@ const Profiles = () => {
 
           <Style.ProfileDescription>Pedro</Style.ProfileDescription>
 
-          <Style.ProfileEdit onClick={handleNavigateEdit} src={Edit} alt="" />
+          <Style.ProfileEdit src={Edit} alt="" />
         </Style.ProfileDiv>
+
+        <Style.CreateProfile onClick={() => navigate("/profiles/settings")} src={Add} alt="" />
+
       </Style.ProfileSection>
     </Style.Background>
   );

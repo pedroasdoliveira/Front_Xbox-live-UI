@@ -23,7 +23,7 @@ export const BackIcon = styled.i`
 export const ProfileSection = styled.section`
   ${({ theme }) => css`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     width: 206px;
@@ -71,3 +71,17 @@ export const ProfileEdit = styled.img`
     }
   `}
 `;
+
+export const CreateProfile = styled.img`
+  ${({theme}) => css`
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    position: relative;
+    left: 5rem;
+    transition: ${theme.constants.transitionEvents};
+    :hover {
+      transform: ${theme.constants.transformeScale};
+    }
+  `}
+`
