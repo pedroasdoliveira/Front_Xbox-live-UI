@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { colors } from "./colors";
 import { constants } from "./constants";
 
 const logoStyle = () => css`
@@ -54,10 +55,33 @@ const BackIcon = () => css`
   }
 `;
 
+const BackgroundProfiles = () => css`
+  background-image: ${constants.xboxWallpaper};
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  cursor: default;
+`;
+
+const ContainerCardProfile = () => css`
+  background-color: ${colors.secondBgColor};
+  opacity: 60%;
+  border-radius: 15px;
+  width: 625px;
+  height: auto;
+  padding: 1rem;
+`;
+
 export const mixins = {
   logoStyle,
   subTitleStyle,
   bodyStyle,
   loginButton,
   BackIcon,
+  BackgroundProfiles,
+  ContainerCardProfile,
 };

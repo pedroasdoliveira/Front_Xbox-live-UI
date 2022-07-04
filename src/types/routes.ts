@@ -3,5 +3,7 @@ export enum RoutesPath {
     LOGIN = '/login',
     SINGUP = '/singup',
     PROFILES = '/profiles',
-    CREATE_PROFILES = '/profiles/create'
+    CREATE_PROFILES = '/profiles/create',
+    EDIT_PROFILE = '/profiles/edit',
+    HOMEPAGE = '/profile/homepage',
 }

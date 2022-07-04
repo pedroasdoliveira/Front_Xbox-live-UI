@@ -13,7 +13,7 @@ const Profiles = () => {
 
       <Style.ProfileSection>
         <Style.ProfileDiv>
-          <Style.Profileimg src={Avatar01} alt="" />
+          <Style.Profileimg onClick={() => navigate('/profile/homepage')} src={Avatar01} alt="" />
 
           <Style.ProfileDescription>Pedro</Style.ProfileDescription>
 
@@ -33,7 +33,7 @@ const Profiles = () => {
 
           <Style.ProfileDescription>Pedro</Style.ProfileDescription>
 
-          <Style.ProfileEdit src={Edit} alt="" />
+          <Style.ProfileEdit onClick={() => navigate('/profiles/edit')} src={Edit} alt="" />
         </Style.ProfileDiv>
 
         <Style.CreateProfile onClick={() => navigate("/profiles/create")} src={Add} alt="Icone de adicionar" />

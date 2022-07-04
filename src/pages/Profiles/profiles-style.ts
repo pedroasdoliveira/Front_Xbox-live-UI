@@ -2,15 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Background = styled.main`
   ${({ theme }) => css`
-    background-image: ${theme.constants.xboxWallpaper};
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    justify-items: center;
-    align-content: center;
-    cursor: default;
+      ${theme.mixins.BackgroundProfiles}
   `}
 `;
 
