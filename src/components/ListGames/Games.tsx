@@ -1,9 +1,18 @@
+import { useNavigate } from 'react-router-dom'
 import * as Style from './Games-style'
 
-const Games = () => {
+const GamesList = () => {
+  const navigate = useNavigate()
+
   return (
-    <div>Games</div>
+    <Style.GamesList>
+      <Style.BackIcon onClick={() => navigate('/profile/homepage')} />
+
+      <Style.ListSection>
+        
+      </Style.ListSection>
+    </Style.GamesList>
   )
 }
 
-export default Games
+export default GamesList

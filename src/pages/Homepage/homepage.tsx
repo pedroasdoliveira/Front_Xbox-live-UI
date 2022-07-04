@@ -26,8 +26,8 @@ const Homepage = () => {
 
         <Style.InfoSection>
 
-            <Style.InfoCard>
-                Minha biblioteca
+            <Style.InfoCard onClick={() => navigate('/profile/homepage/list')}>
+                <p>Minha biblioteca</p>
             </Style.InfoCard>
 
         </Style.InfoSection>

@@ -7,6 +7,7 @@ import { useRoutes } from "react-router-dom";
 import { RoutesPath } from "types/routes";
 import EditProfile from "pages/Edit_profile/EditProfile";
 import Homepage from "pages/Homepage/homepage";
+import GamesList from "components/ListGames/Games";
 
 const Router = () => {
   return useRoutes([
@@ -37,6 +38,10 @@ const Router = () => {
     {
       path: RoutesPath.HOMEPAGE,
       element: <Homepage />
+    },
+    {
+      path: RoutesPath.GAMES_LIST,
+      element: <GamesList />
     }
   ]);
 };

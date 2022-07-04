@@ -5,6 +5,7 @@ export const Homepage = styled.main`
         background-image: ${theme.constants.homepageBackground};
         background-repeat: no-repeat;
         background-size: cover;
+        filter: grayscale(50%);
         min-width: 100vw;
         min-height: 100vh;
         display: grid;
@@ -67,7 +68,7 @@ export const InfoCard = styled.div`
         height: auto;
         margin: 1rem;
         border: 2px solid #000;
+        cursor: pointer;
         ${theme.mixins.bodyStyle}
     `}
 `;
-
