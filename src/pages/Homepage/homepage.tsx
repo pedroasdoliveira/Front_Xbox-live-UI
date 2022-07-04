@@ -8,7 +8,30 @@ const Homepage = () => {
     <Style.Homepage>
         <Style.BackIcon onClick={() => navigate('/profiles')} />
 
-        
+        <Style.CardSection>
+
+            <Style.CardGame>
+                Lorem ipsum dolor sit amet
+            </Style.CardGame>
+
+            <Style.CardGame>
+                Lorem ipsum dolor sit amet
+            </Style.CardGame>
+
+            <Style.CardGame>
+                Lorem ipsum dolor sit amet
+            </Style.CardGame>
+
+        </Style.CardSection>
+
+        <Style.InfoSection>
+
+            <Style.InfoCard>
+                Minha biblioteca
+            </Style.InfoCard>
+
+        </Style.InfoSection>
+
     </Style.Homepage>
   )
 }
