@@ -2,6 +2,7 @@ import XboxBackground from 'assets/img/xbox-live-background.jpg'
 import XboxWallpaper from 'assets/img/xbox-wallpaper.png'
 import BackIcon from 'assets/icon/Voltar.svg'
 import coolBackground from 'assets/img/cool-background.png'
+import AddGames from 'assets/icon/add_game.svg'
 
 export const constants = {
     logoFontFamily: 'Roboto, sans-serif',
@@ -21,6 +22,7 @@ export const constants = {
     backIcon: `url(${BackIcon})`,
 
     homepageBackground: `url(${coolBackground})`,
+    createGamesIcon: `url(${AddGames})`,
 
     transitionEvents: 'all ease-in-out .6s',
     transformeScale: 'scale(1.2)'
