@@ -1,8 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import * as Style from './style'
 
 const CrudGamesGenrer = () => {
+  const navigate = useNavigate()
+
   return (
-    <div>index</div>
+    <Style.Page>
+      <Style.BackIcon onClick={() => navigate('/profile/homepage')} />
+    </Style.Page>
   )
 }
 
