@@ -1,12 +1,14 @@
 import styled, { css } from "styled-components";
 
-export const ContainerOption = styled.nav`
+export const ContainerOption = styled.div`
     ${() => css`
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        height: 150px;
-        padding: 0 2rem;
+        width: fit-content;
+        padding: 0 1rem 0 2rem;
+        position: relative;
+        left: 75%;
+        top: -1rem;
     `}
 `;
 
