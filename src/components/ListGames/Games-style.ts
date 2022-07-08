@@ -11,6 +11,7 @@ export const GamesList = styled.main`
         min-width: 100vw;
         min-height: 100vh;
         cursor: default;
+        flex-direction: column;
         ${theme.mixins.bodyStyle}
     `}
 `;
@@ -24,14 +25,20 @@ export const BackIcon = styled.i`
 export const ListSection = styled.section`
     ${() => css`
         display: flex;
-        justify-content: center;
-        width: 90%;
+        flex-direction: column;
+        width: 100%;
         height: auto;
         margin: 2rem;
         padding: 2rem;
-        border: 2px solid #000;
     `}
 `;
+
+export const Search = styled.div`
+    ${() => css`
+        display: flex;
+        justify-content: center;
+    `}
+`
 
 export const SearchInput = styled.input`
     ${({theme}) => css`
@@ -50,6 +57,27 @@ export const SearchIcon = styled.i`
     ${() => css`
         font-size: 2rem;
         margin: 0 .6rem;
+        color: #f4f5f9;
         cursor: pointer;
     `}
+`;
+
+export const Categories = styled.div`
+    ${() => css`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin: 1rem 0;
+    `}
 `
+
+export const SectionsSearch = styled.p`
+    ${({theme}) => css`
+        ${theme.mixins.subTitleStyle}
+        margin: 0 3rem;
+        color: #f4f5f9;
+        cursor: pointer;
+    `}
+`;
+
