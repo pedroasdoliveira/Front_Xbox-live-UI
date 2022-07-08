@@ -1,8 +1,6 @@
+import { Games } from "Mocks/Games";
 import { useNavigate } from "react-router-dom";
 import * as Style from "./homepage-style";
-import { imgUrl } from "./homepage-style";
-import { Games } from "Mocks/Games";
-import { useState } from "react";
 
 // interface GamesProps {
 //   id: number;
@@ -21,6 +19,16 @@ const Homepage = () => {
   return (
     <Style.Homepage>
       <Style.BackIcon onClick={() => navigate("/profiles")} />
+
+      <Style.SectionItemsDiv>
+
+        <Style.SepareItems>
+          <Style.CreateGameIcon onClick={() => navigate('/profile/createGames&Genrer')} />
+        </Style.SepareItems>
+
+       
+
+      </Style.SectionItemsDiv>
 
       <Style.CardSection>
         {Games.map((game) => (
