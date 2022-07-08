@@ -1,5 +1,6 @@
 export const Games = [
   {
+    id: 1,
     title: "Halo Infinite",
     coverImageUrl:
       "https://upload.wikimedia.org/wikipedia/pt/d/d1/Halo_Infinite_capa.png",
@@ -11,6 +12,7 @@ export const Games = [
     gameplayYouTubeUrl: "https://www.youtube.com/watch?v=YoWhmo3W2wc",
   },
   {
+    id: 2,
     title: "Forza Horizon 5",
     coverImageUrl:
       "https://upload.wikimedia.org/wikipedia/pt/d/dc/Capa_de_Forza_Horizon_5.jpg",
@@ -22,6 +24,7 @@ export const Games = [
     gameplayYouTubeUrl: "https://www.youtube.com/watch?v=E2Ah8Dr9o2I",
   },
   {
+    id: 3,
     title: "Elden Ring",
     coverImageUrl:
       "https://upload.wikimedia.org/wikipedia/pt/0/0d/Elden_Ring_capa.jpg",
@@ -33,6 +36,7 @@ export const Games = [
     gameplayYouTubeUrl: "https://www.youtube.com/watch?v=JldMvQMO_5U",
   },
   {
+    id: 4,
     title: "Alan Wake Remastered",
     coverImageUrl:
       "https://elamigosedition.com/uploads/posts/2021-10/1633962915_alan-wake-remastered-cover-download.webp",

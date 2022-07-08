@@ -1,7 +1,7 @@
 import XboxBackground from 'assets/img/xbox-live-background.jpg'
 import XboxWallpaper from 'assets/img/xbox-wallpaper.png'
 import BackIcon from 'assets/icon/Voltar.svg'
-import homepageBackground from 'assets/wallpapers/thumb-rick-and-morty.png'
+import coolBackground from 'assets/img/cool-background.png'
 
 export const constants = {
     logoFontFamily: 'Roboto, sans-serif',
@@ -20,7 +20,7 @@ export const constants = {
     xboxWallpaper: `url(${XboxWallpaper})`,
     backIcon: `url(${BackIcon})`,
 
-    homepageBackground: `url(${homepageBackground})`,
+    homepageBackground: `url(${coolBackground})`,
 
     transitionEvents: 'all ease-in-out .6s',
     transformeScale: 'scale(1.2)'

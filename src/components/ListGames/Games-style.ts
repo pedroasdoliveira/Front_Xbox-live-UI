@@ -22,14 +22,34 @@ export const BackIcon = styled.i`
 `;
 
 export const ListSection = styled.section`
-    ${({theme}) => css`
+    ${() => css`
         display: flex;
         justify-content: center;
-        align-items: center;
-        width: 100%;
+        width: 90%;
         height: auto;
         margin: 2rem;
         padding: 2rem;
-        border: 2px solid #000
+        border: 2px solid #000;
     `}
 `;
+
+export const SearchInput = styled.input`
+    ${({theme}) => css`
+        width: 650px;
+        height: 35px;
+        border-radius: 15px;
+        border: transparent;
+        outline: none;
+        opacity: 65%;
+        color: #000;
+        ${theme.mixins.bodyStyle}
+    `}
+`;
+
+export const SearchIcon = styled.i`
+    ${() => css`
+        font-size: 2rem;
+        margin: 0 .6rem;
+        cursor: pointer;
+    `}
+`
