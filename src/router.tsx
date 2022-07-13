@@ -7,8 +7,8 @@ import { useRoutes } from "react-router-dom";
 import { RoutesPath } from "types/routes";
 import EditProfile from "pages/Edit_profile/EditProfile";
 import Homepage from "pages/Homepage/homepage";
-import GamesList from "components/ListGames/Games";
 import CrudGamesGenrer from "pages/Add_Game&Genre";
+import GamesList from "pages/ListGames/Games";
 
 const Router = () => {
   return useRoutes([
