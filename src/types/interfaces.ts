@@ -11,3 +11,18 @@ export interface RegisterUser {
     confirmPassword: string;
     cpf: string;
 }
+
+export interface GamesTypes {
+    id: string;
+    title: string;
+    coverImageUrl: string;
+    description: string;
+    year: number;
+    imbScore: number;
+    trailerYoutubeUrl: string;
+    gameplayYouTubeUrl: string;
+    genders: {
+        id: string;
+        name: string;
+    }
+}
