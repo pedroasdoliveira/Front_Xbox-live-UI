@@ -1,15 +1,25 @@
-import * as Style from './style'
+import * as Style from "./style";
 import { FiSearch } from "react-icons/fi";
 
-const SearchGames = () => {
-  return (
-    <Style.Search>
-        <Style.SearchInput type='text' placeholder=' Pesquisasr jogo' />
-        <Style.SearchIcon>
-            <FiSearch />
-        </Style.SearchIcon>
-    </Style.Search>
-  )
+interface SearchGame {
+  value: string;
+  handleSearchValue: (e: any) => void;
 }
 
-export default SearchGames
+const SearchGames = (props: SearchGame) => {
+  return (
+    <Style.Search>
+      <Style.SearchInput
+        type="text"
+        placeholder=" Pesquisasr jogo"
+        value={props.value}
+        onChange={props.handleSearchValue}
+      />
+      <Style.SearchIcon>
+        <FiSearch />
+      </Style.SearchIcon>
+    </Style.Search>
+  );
+};
+
+export default SearchGames;
