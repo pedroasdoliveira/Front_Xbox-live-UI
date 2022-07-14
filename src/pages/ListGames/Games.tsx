@@ -4,7 +4,7 @@ import ReturnPage from "components/ReturnPage";
 import SearchGames from "components/Search/Games";
 import GenrerOption from "components/GenrerOption/GenrerOption";
 import CardGames from "components/CardGames/List";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { GamesTypes } from "types/interfaces";
 import { GetGames } from "Service/authService";
 
@@ -23,12 +23,16 @@ const GamesList = () => {
     fetchGames();
   }, []);
 
+  const handleSearchValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <Style.GamesList>
       <ReturnPage Route={() => navigate("/profile/homepage")} />
 
       <Style.ListSection>
-        <SearchGames />
+        <SearchGames value={search} handleSearchValue={handleSearchValue} />
 
         <Style.Categories>
           <Style.SectionsSearch>Todos os jogos</Style.SectionsSearch>
@@ -38,14 +42,38 @@ const GamesList = () => {
         <GenrerOption />
 
         <Style.ContainerCard>
-          {games.map((game) => (
-            <CardGames key={game.id} title={game.title}>
-                <Style.CoverImageGame src={game.coverImageUrl} alt="" />
-                <p>{game.genders.name}</p>
-                <p>{game.year}</p>
-                <p>{game.imbScore}</p>
-            </CardGames>
-          ))}
+          {search !== ""
+            ? games
+                .filter(
+                  (e: GamesTypes) =>
+                    e.title.toLowerCase().includes(search.toLowerCase()) ||
+                    e.year.toFixed().includes(search.toLowerCase()) ||
+                    e.imbScore.toFixed().includes(search.toLowerCase())
+                )
+                .map((game) => (
+                  <CardGames key={game.id} title={game.title}>
+                    <Style.CoverImageGame src={game.coverImageUrl} alt="" />
+                    <Style.GenrerGame>
+                      {game.genders.map((genrer) => (
+                        <span key={genrer.id}>{genrer.name}</span>
+                      ))}
+                    </Style.GenrerGame>
+                    <p>{game.year}</p>
+                    <p>{game.imbScore}</p>
+                  </CardGames>
+                ))
+            : games.map((game) => (
+                <CardGames key={game.id} title={game.title}>
+                  <Style.CoverImageGame src={game.coverImageUrl} alt="" />
+                  <Style.GenrerGame>
+                    {game.genders.map((genrer) => (
+                      <span key={genrer.id}>{genrer.name}</span>
+                    ))}
+                  </Style.GenrerGame>
+                  <p>{game.year}</p>
+                  <p>{game.imbScore}</p>
+                </CardGames>
+              ))}
         </Style.ContainerCard>
       </Style.ListSection>
     </Style.GamesList>

@@ -58,8 +58,18 @@ export const ContainerCard = styled.section`
 
 export const CoverImageGame = styled.img`
   ${() => css`
-    width: 100%;
+    width: 320px;
     height: 400px;
     margin: 0 auto;
+    border-radius: 10px;
   `}
 `;
+
+export const GenrerGame = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: .5rem;
+  `}
+`
