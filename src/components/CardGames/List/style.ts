@@ -5,7 +5,6 @@ export const Card = styled.div`
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        border: 1px solid #f4f5f9;
         background-color: transparent;
     `}
 `;
@@ -14,18 +13,28 @@ export const IconContainer = styled.div`
     ${() => css`
         display: flex;
         justify-content: flex-end;
-        margin-right: .5rem;
-        font-size: 2rem;
+        margin-right: 1rem;
+        margin-top: .5rem;
+        font-size: 3rem;
         color: #B8000C;
     `}
 `;
+
+export const Icon = styled.i`
+    ${() => css`
+        cursor: pointer;
+        transition: all ease-in-out .4s;
+        :hover {
+            transform: scale(1.2);
+        }
+    `}
+`
 
 export const TitleGame = styled.h2`
     ${({theme}) => css`
         ${theme.mixins.subTitleStyle}
         color: #f4f5f9;
         text-align: center;
-        margin-bottom: .6rem;
     `}
 `;
 

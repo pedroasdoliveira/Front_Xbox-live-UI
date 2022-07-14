@@ -11,7 +11,7 @@ const CardGames = (props: CardProps) => {
   return (
     <Style.Card>
         <Style.IconContainer>
-            <MdFavoriteBorder />
+            <Style.Icon><MdFavoriteBorder /></Style.Icon>
         </Style.IconContainer>
 
         <Style.TitleGame>{props.title}</Style.TitleGame>
