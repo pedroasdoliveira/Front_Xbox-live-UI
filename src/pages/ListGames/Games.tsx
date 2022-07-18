@@ -17,7 +17,6 @@ const GamesList = () => {
   useEffect(() => {
     const fetchGames = async () => {
       const payload: any = await GetGames.AllGames();
-      console.log(payload.data);
       setGames(payload.data);
     };
     fetchGames();
