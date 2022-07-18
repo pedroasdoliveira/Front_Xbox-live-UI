@@ -6,7 +6,7 @@ import GenrerOption from "components/GenrerOption/GenrerOption";
 import CardGames from "components/CardGames/List";
 import { ChangeEvent, useEffect, useState } from "react";
 import { GamesTypes } from "types/interfaces";
-import { GetGames } from "Service/authService";
+import { GetGames } from "Service/gamesService";
 
 const GamesList = () => {
   const navigate = useNavigate();
