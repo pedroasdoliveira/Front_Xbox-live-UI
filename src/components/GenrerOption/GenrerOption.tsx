@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import * as Style from './GenrerOption-style'
 
 interface GenrerOptionProp {
@@ -5,6 +6,8 @@ interface GenrerOptionProp {
 }
 
 const GenrerOption = () => {
+  const [genrer, setGenrer] = useState([])
+
   return (
     <Style.ContainerOption>
         <Style.OptionSelect>
