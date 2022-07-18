@@ -1,28 +1,31 @@
-import { useState } from 'react'
-import * as Style from './GenrerOption-style'
-
-interface GenrerOptionProp {
-  children: React.ReactNode
-}
+import { useEffect, useState } from "react";
+import * as Style from "./GenrerOption-style";
+import { GenrerTypes } from "types/interfaces";
+import { Genrers } from "Service/genrerService";
 
 const GenrerOption = () => {
-  const [genrer, setGenrer] = useState([])
+  const [genrers, setGenrers] = useState<GenrerTypes[]>([]);
+
+  useEffect(() => {
+    const fetchGenrer = async () => {
+      const payload: any = await Genrers.AllGenrers();
+      setGenrers(payload.data);
+    };
+    fetchGenrer();
+  }, []);
 
   return (
     <Style.ContainerOption>
-        <Style.OptionSelect>
-            <Style.Options value="default">Gêneros</Style.Options>
-            <Style.Options value=''>Ação</Style.Options>
-            <Style.Options value=''>FPS</Style.Options>
-            <Style.Options value=''>Aventura</Style.Options>
-        </Style.OptionSelect>
-
-        <Style.GenrerOption>
-          
-        </Style.GenrerOption>
-
+      <Style.OptionSelect>
+        <Style.Options value="default">
+          Gêneros
+        </Style.Options>
+        {genrers.map((genrer) => (
+          <Style.Options value="" key={genrer.id}>{genrer.name}</Style.Options>
+        ))}
+      </Style.OptionSelect>
     </Style.ContainerOption>
-  )
-}
+  );
+};
 
-export default GenrerOption
+export default GenrerOption;
