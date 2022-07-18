@@ -13,12 +13,12 @@ export const BackIcon = styled.i`
 `;
 
 export const ProfileSection = styled.section`
-  ${({ theme }) => css`
+  ${() => css`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 206px;
+    width: auto;
     height: 206px;
   `}
 `;
