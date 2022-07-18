@@ -28,3 +28,8 @@ export interface GamesTypes {
     }
   ];
 }
+
+export interface GenrerTypes {
+  name: string;
+  gamesId?: string;
+}
