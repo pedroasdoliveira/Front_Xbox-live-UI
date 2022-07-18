@@ -30,6 +30,35 @@ export interface GamesTypes {
 }
 
 export interface GenrerTypes {
+  id: string;
   name: string;
   gamesId?: string;
+  gamesGender: [
+    {
+      title: string;
+    }
+  ];
+}
+
+export interface ProfilesTypes {
+  id: string;
+  title: string;
+  imageUrl: string;
+  user: {
+    nickname: string;
+    email: string;
+    isAdmin: boolean;
+  };
+  games: [
+    {
+      id: string;
+      title: string;
+      coverImageUrl: string;
+      description: string;
+      year: number;
+      imbScore: number;
+      trailerYoutubeUrl: string;
+      gameplayYouTubeUrl: string;
+    }
+  ];
 }
