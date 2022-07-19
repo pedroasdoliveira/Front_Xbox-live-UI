@@ -37,9 +37,11 @@ const Login = () => {
     }
 
     const jwt = response.data.token;
+    const userId = response.data.user.id;
 
     if (jwt) {
       localStorage.setItem("jwt", jwt);
+      localStorage.setItem('userId', userId);
       swal({
         title: "Bem vindo",
         icon: "success",
