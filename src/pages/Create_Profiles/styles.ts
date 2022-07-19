@@ -12,27 +12,6 @@ export const BackIcon = styled.i`
   `}
 `;
 
-export const EditContainer = styled.section`
-  ${({ theme }) => css`
-    width: 625px;
-    height: auto;
-    padding: 1rem;
-    background-color: ${theme.colors.secondBgColor};
-    opacity: 60%;
-    border-radius: 15px;
-  `}
-`;
-
-export const EditDivImg = styled.div`
-  ${() => css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0.8rem auto;
-  `}
-`;
-
 export const EditImg = styled.img`
   ${() => css`
     width: 206px;
