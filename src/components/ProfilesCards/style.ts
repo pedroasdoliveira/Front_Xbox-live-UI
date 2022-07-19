@@ -16,6 +16,7 @@ export const Profileimg = styled.img`
     border-radius: 50%;
     cursor: pointer;
     width: 200px;
+    height: 200px;
     transition: ${theme.constants.transitionEvents};
     :hover {
       transform: ${theme.constants.transformeScale};
