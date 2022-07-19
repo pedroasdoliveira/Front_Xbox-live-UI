@@ -41,15 +41,16 @@ export interface GenrerTypes {
 }
 
 export interface ProfilesTypes {
-  id: string;
+  id?: string;
   title: string;
   imageUrl: string;
-  user: {
+  userId: string;
+  user?: {
     nickname: string;
     email: string;
     isAdmin: boolean;
   };
-  games: [
+  games?: [
     {
       id: string;
       title: string;
