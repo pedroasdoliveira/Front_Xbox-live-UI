@@ -30,4 +30,34 @@ export const Profiles = {
       });
     }
   },
-};
+
+  ProfileGetById: async (id: string) => {
+    try {
+      const res = await Api.get(`/profile/${id}`);
+      return res
+    }
+    catch (error: any) {
+      swal({
+        title: "Error",
+        text: `${error.message}`,
+        icon: "error",
+        timer: 6000,
+      });
+    }
+  },
+
+  EditProfile: async (id: string, profile: ProfilesTypes) => {
+    try {
+      const res = await Api.patch(`/profile/${id}`, profile);
+      return res
+    }
+    catch (error: any) {
+      swal({
+        title: "Error",
+        text: `${error.message}`,
+        icon: "error",
+        timer: 6000,
+      });
+    }
+  }
+}; 
