@@ -60,10 +60,10 @@ const CreateProfile = () => {
       <ReturnPage Route={() => navigate("/profiles")} />
 
       <ContainerForm>
-        <Style.EditImg src={profile.imageUrl ? profile.imageUrl : Avatar01} />
+        <Style.Img src={profile.imageUrl ? profile.imageUrl : Avatar01} />
 
-        <Style.EditForm onSubmit={handleCreateProfile}>
-          <Style.EditChangeName
+        <Style.Form onSubmit={handleCreateProfile}>
+          <Style.InputCreate
             type="text"
             placeholder=" Url da imagem"
             name='imageUrl'
@@ -72,7 +72,7 @@ const CreateProfile = () => {
             required
           />
 
-          <Style.EditChangeName
+          <Style.InputCreate
             type="text"
             placeholder=" Nome do perfil"
             name="title"
@@ -81,8 +81,8 @@ const CreateProfile = () => {
             required
           />
 
-          <Style.EditButton>Criar</Style.EditButton>
-        </Style.EditForm>
+          <Style.CreateProfileBtn>Criar</Style.CreateProfileBtn>
+        </Style.Form>
       </ContainerForm>
     </Style.Background>
   );

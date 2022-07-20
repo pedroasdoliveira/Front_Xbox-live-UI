@@ -12,7 +12,7 @@ export const BackIcon = styled.i`
   `}
 `;
 
-export const EditImg = styled.img`
+export const Img = styled.img`
   ${() => css`
     width: 206px;
     height: 206px;
@@ -22,7 +22,7 @@ export const EditImg = styled.img`
   `}
 `;
 
-export const EditForm = styled.form`
+export const Form = styled.form`
   ${() => css`
     display: flex;
     flex-direction: column;
@@ -31,16 +31,7 @@ export const EditForm = styled.form`
   `}
 `;
 
-export const EditChangeImg = styled.button`
-    ${({theme}) => css`
-        ${theme.mixins.loginButton}
-        background-color: #03BF84;
-        color: #000;
-        width: 250px;
-    `}
-`;
-
-export const EditChangeName = styled.input`
+export const InputCreate = styled.input`
     ${({theme}) => css`
         width: 395px;
         height: 40px;
@@ -53,7 +44,7 @@ export const EditChangeName = styled.input`
     `}
 `;
 
-export const EditButton = styled.button`
+export const CreateProfileBtn = styled.button`
     ${({theme}) => css`
         ${theme.mixins.loginButton}
         color: #000;
