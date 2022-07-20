@@ -20,47 +20,25 @@ export const Homepage = styled.main`
   `}
 `;
 
-export const BackIcon = styled.i`
-  ${({ theme }) => css`
-    ${theme.mixins.BackIcon}
-  `}
-`;
-
-export const SectionItemsDiv = styled.section`
-  ${() => css`
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 30px;
-    right: 275px;
-  `}
-`;
-
-export const SepareItems = styled.div`
-  ${() => css`
-      display: flex;
-      margin: 0 .6rem;
-  `}
-`
-
-export const CreateGameIcon = styled.i`
-  ${({theme}) => css`
-    background-image: ${theme.constants.createGamesIcon};
-    background-repeat: no-repeat;
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
-  `}
-`
-
 export const CardSection = styled.section`
   ${({ theme }) => css`
-    display: flex;
+    display: grid;
+    justify-self: center;
+    justify-items: center;
+    align-self: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    width: 100%;
+
+    /* display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: auto;
+    height: auto; */
   `}
 `;
 
