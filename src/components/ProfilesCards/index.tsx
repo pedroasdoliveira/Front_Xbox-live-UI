@@ -18,22 +18,35 @@ const ProfilesCards = () => {
     fetchProfiles();
   }, []);
 
+  const handleEditProfile = async (id: string) => {
+    const GetByIdProfile = await Profiles.ProfileGetById(id)
+    navigate(`/profiles/edit/${id}`)
+  }
+
   return (
-    <Styled.ProfileDiv>
-      {profiles.map((profile) => (
-        <div key={profile.id}>
-          <Styled.Profileimg
-            onClick={() => navigate("/profile/homepage")}
-            src={profile.imageUrl}
-            alt='Avatar do usuário'
-          />
+    <div>
+      <Styled.ProfileDiv>
+        {profiles.map((profile) => (
+          <div key={profile.id}>
+            <Styled.Profileimg
+              onClick={() => navigate("/profile/homepage")}
+              src={profile.imageUrl}
+              alt="Avatar do usuário"
+            />
 
-          <Styled.ProfileDescription>{profile.title}</Styled.ProfileDescription>
+            <Styled.ProfileDescription>
+              {profile.title}
+            </Styled.ProfileDescription>
 
-          <Styled.ProfileEdit src={Edit} alt="Icone de editar o perfil" />
-        </div>
-      ))}
-    </Styled.ProfileDiv>
+            <Styled.ProfileEdit
+              src={Edit}
+              alt="Icone de editar o perfil"
+              onClick={() => handleEditProfile(`${profile.id}`)}
+            />
+          </div>
+        ))}
+      </Styled.ProfileDiv>
+    </div>
   );
 };
 
