@@ -1,7 +1,7 @@
 import Api from "./api";
 import swal from "sweetalert";
 
-export const Homepage = {
+export const HomepageProfile = {
   HomeByProfileId: async (id: string) => {
     try {
       const res = await Api.get(`/homepage/${id}`);
