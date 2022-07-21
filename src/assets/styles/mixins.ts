@@ -40,6 +40,26 @@ const loginButton = () => css`
   }
 `;
 
+const DeleteButton = () => css`
+  width: 175px;
+  height: 45px;
+  border: transparent;
+  border-radius: 15px;
+  background-color: #9D0208;
+  color: #f4f5f9;
+  box-shadow: 4px 4px 10px 1.5px rgba(0, 0, 0, 0.25);
+  font-family: ${constants.bodyFontFamily};
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1rem auto;
+  cursor: pointer;
+  transition: all ease-in-out 0.6s;
+  :hover {
+    transform: scale(1.1);
+  }
+`
+
 const BackIcon = () => css`
   background-image: ${constants.backIcon};
   background-repeat: no-repeat;
@@ -81,6 +101,7 @@ export const mixins = {
   subTitleStyle,
   bodyStyle,
   loginButton,
+  DeleteButton,
   BackIcon,
   BackgroundProfiles,
   ContainerCardProfile,
