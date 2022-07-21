@@ -19,7 +19,6 @@ const ProfilesCards = () => {
   }, []);
 
   const handleEditProfile = async (id: string) => {
-    const GetByIdProfile = await Profiles.ProfileGetById(id)
     navigate(`/profiles/edit/${id}`)
   }
 
