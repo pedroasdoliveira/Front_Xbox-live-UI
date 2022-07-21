@@ -55,9 +55,3 @@ export const EditProfileBtn = styled.button`
   `}
 `;
 
-export const DeleteProfileBtn = styled.button`
-  ${({theme}) => css`
-    ${theme.mixins.DeleteButton}
-    color: #000;
-  `}
-`
