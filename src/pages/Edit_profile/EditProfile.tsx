@@ -11,7 +11,7 @@ import * as Style from "./EditProfile-style";
 const EditProfile = () => {
   const navigate = useNavigate();
 
-  const { id } = useParams();
+  const { id } = useParams(); // Pegando o Id do perfil salvo na Url da rota utilizando o useParams
 
   const [profile, setProfile] = useState<ProfilesTypes>({
     title: "",
@@ -23,14 +23,7 @@ const EditProfile = () => {
     getProfileId();
   }, []);
 
-  const handleChangeValues = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setProfile((values: ProfilesTypes) => ({
-      ...values,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const getProfileId = async () => {
+  const getProfileId = async () => { // Pegando as informações conforme o Id do Profile
     if (id) {
       const GetByIdProfile = await Profiles.ProfileGetById(id);
 
@@ -47,7 +40,14 @@ const EditProfile = () => {
     }
   };
 
-  const handleEditProfile = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChangeValues = (e: React.ChangeEvent<HTMLInputElement>) => { // Atualizando os valores do perfil salvos
+    setProfile((values: ProfilesTypes) => ({
+      ...values,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleEditProfile = async (e: React.FormEvent<HTMLFormElement>) => { // Editando o perfil pelo Id pego e as informações do state
     e.preventDefault();
 
     const getUserId = localStorage.getItem("userId");
@@ -60,20 +60,51 @@ const EditProfile = () => {
     }
 
     if (id) {
-      const payload: any = await Profiles.EditProfile(id, profile);
+      const payloadEdit: any = await Profiles.EditProfile(id, profile);
 
-      if (payload) {
+      if (payloadEdit) {
         swal({
           title: "Perfil atualizado!",
           icon: "success",
           timer: 6000,
         });
         navigate("/profiles");
-      } 
-      else {
+      } else {
         swal({
           title: "Error",
           text: "Erro ao atualizar o perfil!",
+          icon: "error",
+          timer: 6000,
+        });
+      }
+    }
+  };
+
+  const handleDeleteProfile = async () => { // Deletar o perfil pelo Id pego no useParams
+    swal({
+      title: `Deletar perfil ${profile.title}`,
+      text: 'Deseja deletar o perfil?',
+      icon: 'warning',
+      buttons: {
+        
+      }
+    })
+
+    if (id) {
+      const payloadDelete = await Profiles.DeleteProfile(id);
+
+      if (payloadDelete) {
+        swal({
+          title: "Perfil deletado!",
+          icon: "success",
+          timer: 6000,
+        });
+        navigate("/profiles");
+      }
+      else {
+        swal({
+          title: "Error",
+          text: "Erro ao deletar o perfil!",
           icon: "error",
           timer: 6000,
         });
@@ -109,7 +140,12 @@ const EditProfile = () => {
             required
           />
 
-          <Style.EditProfileBtn type="submit">Atualizar</Style.EditProfileBtn>
+          <Style.ContainerBtns>
+            <Style.EditProfileBtn type="submit">Atualizar</Style.EditProfileBtn>
+            <Style.DeleteProfileBtn onClick={handleDeleteProfile}>
+              Deletar
+            </Style.DeleteProfileBtn>
+          </Style.ContainerBtns>
         </Style.EditForm>
       </ContainerForm>
     </Style.Background>
