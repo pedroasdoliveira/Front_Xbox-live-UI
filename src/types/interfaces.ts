@@ -63,3 +63,48 @@ export interface ProfilesTypes {
     }
   ];
 }
+
+export interface HomepageTypes {
+  profileData: {
+    title: string;
+    imageUrl: string;
+    user: {
+      nickname: string;
+      isAdmin: boolean;
+    };
+  };
+  favoriteGames: {
+    games: [
+      {
+        title: string;
+        coverImageUrl: string;
+        description: string;
+        imbScore: number;
+        genders: [
+          {
+            name: string;
+          }
+        ];
+      }
+    ];
+  };
+  games: [
+    {
+      title: string;
+      coverImageUrl: string;
+      description: string;
+      imbScore: number;
+      genders: [
+        {
+          name: string;
+        }
+      ];
+    }
+  ];
+  genrerList: [
+    {
+      genrer: string;
+      title: [string];
+    }
+  ];
+}
