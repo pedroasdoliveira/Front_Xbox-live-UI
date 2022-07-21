@@ -28,7 +28,7 @@ const ProfilesCards = () => {
         {profiles.map((profile) => (
           <div key={profile.id}>
             <Styled.Profileimg
-              onClick={() => navigate("/profile/homepage")}
+              onClick={() => navigate(`/profile/homepage/${profile.id}`)}
               src={profile.imageUrl}
               alt="Avatar do usuário"
             />
