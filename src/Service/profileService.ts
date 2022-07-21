@@ -59,5 +59,20 @@ export const Profiles = {
         timer: 6000,
       });
     }
+  },
+
+  DeleteProfile: async (id: string) => {
+    try {
+      const res = await Api.delete(`/profile/${id}`);
+      return res 
+    }
+    catch (error: any) {
+      swal({
+        title: "Error",
+        text: `${error.message}`,
+        icon: "error",
+        timer: 6000,
+      });
+    }
   }
 }; 
