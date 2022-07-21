@@ -72,8 +72,21 @@ export interface HomepageTypes {
       nickname: string;
       isAdmin: boolean;
     };
-  };
-  favoriteGames: {
+    favoriteGames: {
+      games: [
+        {
+          title: string;
+          coverImageUrl: string;
+          description: string;
+          imbScore: number;
+          genders: [
+            {
+              name: string;
+            }
+          ];
+        }
+      ];
+    };
     games: [
       {
         title: string;
@@ -88,6 +101,15 @@ export interface HomepageTypes {
       }
     ];
   };
+  genrerList: [
+    {
+      genrer: string;
+      title: [string];
+    }
+  ];
+}
+
+export interface FavoriteGamesType {
   games: [
     {
       title: string;
@@ -99,12 +121,6 @@ export interface HomepageTypes {
           name: string;
         }
       ];
-    }
-  ];
-  genrerList: [
-    {
-      genrer: string;
-      title: [string];
     }
   ];
 }
