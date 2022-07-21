@@ -1,11 +1,15 @@
 import CreateGamesAdmin from "components/Create/CreateGames";
 import ReturnPage from "components/ReturnPage";
 import { Games } from "Mocks/Games";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { HomepageTypes } from "types/interfaces";
 import * as Style from "./homepage-style";
 
 const Homepage = () => {
   const navigate = useNavigate();
+
+  const [favoriteGames, setFavoriteGames] = useState<HomepageTypes[]>([])
 
   return (
     <Style.Homepage>
