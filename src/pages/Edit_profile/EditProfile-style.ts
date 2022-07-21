@@ -38,9 +38,26 @@ export const InputEdit = styled.input`
   `}
 `;
 
+export const ContainerBtns = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 3.5rem;
+  `}
+`
+
 export const EditProfileBtn = styled.button`
   ${({ theme }) => css`
     ${theme.mixins.loginButton}
     color: #000;
   `}
 `;
+
+export const DeleteProfileBtn = styled.button`
+  ${({theme}) => css`
+    ${theme.mixins.DeleteButton}
+    color: #000;
+  `}
+`
