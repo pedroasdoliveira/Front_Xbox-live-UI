@@ -7,6 +7,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   const handleNavigate = () => {
+    localStorage.removeItem('userId')
     navigate('/login')
   }
 
