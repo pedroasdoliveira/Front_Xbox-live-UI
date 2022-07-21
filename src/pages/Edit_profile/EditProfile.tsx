@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ProfilesTypes } from "types/interfaces";
 import { Profiles } from "Service/profileService";
 import * as Style from "./EditProfile-style";
+import DeleteProfileBtn from "components/Modal/DeleteProfileBtn";
 
 const EditProfile = () => {
   const navigate = useNavigate();
@@ -81,14 +82,6 @@ const EditProfile = () => {
   };
 
   const handleDeleteProfile = async () => { // Deletar o perfil pelo Id pego no useParams
-    swal({
-      title: `Deletar perfil ${profile.title}`,
-      text: 'Deseja deletar o perfil?',
-      icon: 'warning',
-      buttons: {
-        
-      }
-    })
 
     if (id) {
       const payloadDelete = await Profiles.DeleteProfile(id);
@@ -110,6 +103,54 @@ const EditProfile = () => {
         });
       }
     }
+    
+    // if (id) {
+    //   const payloadDelete = await Profiles.DeleteProfile(id);
+
+    //   swal({
+    //     title: `Deseja deletar o perfil ${profile.title}?`,
+    //     icon: 'warning',
+    //     buttons: {
+    //       no: {
+    //         text: 'Não!',
+    //         value: 'not',
+    //       },
+    //       yes: {
+    //         text: 'Sim',
+    //         value: 'delete',
+    //       }
+    //     }
+    //   })
+    //   .then((value) => {
+    //     switch(value) {
+    //       case 'yes':
+
+    //         if (payloadDelete) {
+    //           swal({
+    //             title: 'Perfil deletado!',
+    //             timer: 6000,
+    //           });
+    //           console.log(payloadDelete)
+    //           console.log(profile)
+    //           // navigate("/profiles");
+    //         }
+    //         else {
+    //           swal({
+    //             title: 'Error',
+    //             text: 'Não foi possivel deletar o perfil!',
+    //             icon: 'error',
+    //             timer: 6000,
+    //           })
+    //         }
+
+    //       break;
+
+    //       case 'no':
+    //         navigate(`/profiles/edit/${id}`)
+    //       break;
+    //     }
+    //   })
+    // }
   };
 
   return (
@@ -142,9 +183,7 @@ const EditProfile = () => {
 
           <Style.ContainerBtns>
             <Style.EditProfileBtn type="submit">Atualizar</Style.EditProfileBtn>
-            <Style.DeleteProfileBtn onClick={handleDeleteProfile}>
-              Deletar
-            </Style.DeleteProfileBtn>
+            <DeleteProfileBtn />
           </Style.ContainerBtns>
         </Style.EditForm>
       </ContainerForm>
