@@ -29,7 +29,7 @@ const LibraryAllGames = () => {
 
   return (
     <Style.LibraryGames>
-      <ReturnPage Route={() => navigate("/profiles")} />
+      <ReturnPage Route={() => navigate(-1)} />
 
       <Style.GamesSection>
         <SearchGames value={search} handleSearchValue={searchGames} />
