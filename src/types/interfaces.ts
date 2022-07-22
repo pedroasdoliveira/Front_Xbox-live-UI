@@ -12,6 +12,22 @@ export interface RegisterUser {
   cpf: string;
 }
 
+export interface UserType {
+  name: string;
+  nickname: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  cpf: string;
+  isAdmin?: boolean;
+  profiles?: [
+    {
+      title: string;
+      imageUrl: string
+    }
+  ]
+}
+
 export interface GamesTypes {
   id: string;
   title: string;
