@@ -6,12 +6,6 @@ export const Background = styled.main`
   `}
 `;
 
-export const BackIcon = styled.i`
-  ${({ theme }) => css`
-    ${theme.mixins.BackIcon}
-  `}
-`;
-
 export const Img = styled.img`
   ${() => css`
     width: 206px;
