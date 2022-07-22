@@ -44,7 +44,7 @@ export const ContentCard = styled.div`
         color: #f4f5f9;
         line-height: 1.5rem;
         margin: .5rem auto;
-
+        cursor: pointer;
         p {
             line-height: 1.75rem;
             margin: .3rem auto;

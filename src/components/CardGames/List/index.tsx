@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 interface CardProps {
     title: string;
     children: ReactNode;
+    Route: () => void
 }
 
 const CardGames = (props: CardProps) => {
@@ -16,7 +17,7 @@ const CardGames = (props: CardProps) => {
 
         <Style.TitleGame>{props.title}</Style.TitleGame>
 
-        <Style.ContentCard>{props.children}</Style.ContentCard>
+        <Style.ContentCard onClick={props.Route}>{props.children}</Style.ContentCard>
     </Style.Card>
   )
 }
