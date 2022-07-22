@@ -4,6 +4,7 @@ import BackIcon from 'assets/icon/Voltar.svg'
 import coolBackground from 'assets/img/cool-background.png'
 import AddGames from 'assets/icon/add_game.svg'
 import Category from 'assets/icon/category.svg'
+import Standard from 'assets/img/standard.png'
 
 export const constants = {
     logoFontFamily: 'Roboto, sans-serif',
@@ -20,6 +21,7 @@ export const constants = {
 
     xboxBackground: `url(${XboxBackground})`,
     xboxWallpaper: `url(${XboxWallpaper})`,
+    xboxPlayGameBackground: `url(${Standard})`,
     backIcon: `url(${BackIcon})`,
 
     homepageBackground: `url(${coolBackground})`,
