@@ -23,13 +23,13 @@ export interface UserType {
   profiles?: [
     {
       title: string;
-      imageUrl: string
+      imageUrl: string;
     }
-  ]
+  ];
 }
 
 export interface GamesTypes {
-  id: string;
+  id?: string;
   title: string;
   coverImageUrl: string;
   description: string;
@@ -54,7 +54,7 @@ export interface CreateGameType {
   imbScore: number;
   trailerYoutubeUrl: string;
   gameplayYouTubeUrl: string;
-  genreGame: string
+  genreGame: string;
 }
 
 export interface GenrerTypes {
@@ -142,21 +142,21 @@ export interface HomepageTypes {
 }
 
 export interface FavoriteGamesType {
-  favoriteGames: {
-    games: [
-      {
-        title: string;
-        coverImageUrl: string;
-        description: string;
-        imbScore: number;
-        genders: [
-          {
-            name: string;
-          }
-        ];
-      }
-    ];
-  };
+  games: [
+    {
+      id: string;
+      title: string;
+      coverImageUrl: string;
+      description: string;
+      imbScore: number;
+      genders: [
+        {
+          name: string;
+        }
+      ];
+    }
+  ];
+  id: string;
 }
 
 export interface GamesProfile {
