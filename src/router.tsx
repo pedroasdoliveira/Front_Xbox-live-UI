@@ -11,6 +11,7 @@ import CrudGamesGenrer from "pages/Add_Game&Genre";
 import GamesList from "pages/ListGames/Games";
 import LibraryAllGames from "pages/LibraryGames";
 import CrudGenrer from 'pages/Create&updateGenre/index';
+import GameDefinitions from "pages/GameDefinitions";
 
 const Router = () => {
   return useRoutes([
@@ -57,6 +58,10 @@ const Router = () => {
     {
       path: RoutesPath.CREATE_GENRES,
       element: <CrudGenrer />
+    },
+    {
+      path: RoutesPath.GAME_DEFINITIONS,
+      element: <GameDefinitions />
     }
   ]);
 };
