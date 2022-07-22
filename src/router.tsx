@@ -9,6 +9,7 @@ import EditProfile from "pages/Edit_profile/EditProfile";
 import Homepage from "pages/Homepage/homepage";
 import CrudGamesGenrer from "pages/Add_Game&Genre";
 import GamesList from "pages/ListGames/Games";
+import LibraryAllGames from "pages/LibraryGames";
 
 const Router = () => {
   return useRoutes([
@@ -43,6 +44,10 @@ const Router = () => {
     {
       path: RoutesPath.GAMES_LIST,
       element: <GamesList />
+    },
+    {
+      path: RoutesPath.LIBRARY_GAMES,
+      element: <LibraryAllGames />
     },
     {
       path: RoutesPath.CREATE_GAMES_AND_GENRER,

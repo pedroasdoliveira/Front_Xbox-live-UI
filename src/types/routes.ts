@@ -7,5 +7,6 @@ export enum RoutesPath {
     EDIT_PROFILE = '/profiles/edit/:id',
     HOMEPAGE = '/profile/homepage/:id',
     GAMES_LIST = '/profile/homepage/list/:id',
+    LIBRARY_GAMES = '/profile/homepage/library',
     CREATE_GAMES_AND_GENRER = '/profile/createGames&Genrer'
 }
