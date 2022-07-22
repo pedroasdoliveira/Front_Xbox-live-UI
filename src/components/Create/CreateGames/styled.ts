@@ -13,6 +13,7 @@ export const SectionItemsDiv = styled.section`
 export const SepareItems = styled.div`
   ${() => css`
     display: flex;
+    gap: 1rem;
     margin: 0 0.6rem;
   `}
 `;

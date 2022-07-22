@@ -1,13 +1,14 @@
-import { useNavigate } from 'react-router-dom'
 import * as Style from './styled'
 
-const CreateGamesAdmin = () => {
-    const navigate = useNavigate()
+interface Prop {
+  Route: () => void
+}
 
+const CreateGamesAdmin = ({ Route }: Prop) => {
   return (
     <Style.SectionItemsDiv>
         <Style.SepareItems>
-            <Style.CreateGameIcon onClick={() => navigate('/profile/createGames&Genrer')} />
+            <Style.CreateGameIcon onClick={Route} />
         </Style.SepareItems>
     </Style.SectionItemsDiv>
   )
