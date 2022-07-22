@@ -29,6 +29,18 @@ export interface GamesTypes {
   ];
 }
 
+export interface CreateGameType {
+  id?: string;
+  title: string;
+  coverImageUrl: string;
+  description: string;
+  year: number;
+  imbScore: number;
+  trailerYoutubeUrl: string;
+  gameplayYouTubeUrl: string;
+  genreGame: string
+}
+
 export interface GenrerTypes {
   id: string;
   name: string;
@@ -38,6 +50,10 @@ export interface GenrerTypes {
       title: string;
     }
   ];
+}
+
+export interface CreateGenrerType {
+  name: string;
 }
 
 export interface ProfilesTypes {
