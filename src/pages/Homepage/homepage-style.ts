@@ -21,8 +21,8 @@ export const Homepage = styled.main`
 `;
 
 export const CardSection = styled.section`
-  ${({ theme }) => css`
-    display: grid;
+  ${() => css`
+    /* display: grid;
     justify-self: center;
     justify-items: center;
     align-self: center;
@@ -30,46 +30,36 @@ export const CardSection = styled.section`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    width: 100%;
-
-    /* display: flex;
+    grid-row-gap: 1rem; */
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3.5rem;
     width: 100%;
-    height: auto; */
+    height: auto;
   `}
 `;
 
-export const CardGame = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 285px;
-    height: 350px;
-    margin: 1.25rem;
-    border: 2px solid #000;
-    border-radius: 10px;
-    ${theme.mixins.bodyStyle}
-    opacity: 85%;
-    background-image: url("https://upload.wikimedia.org/wikipedia/pt/d/d1/Halo_Infinite_capa.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-  `}
+export const ContentCard = styled.div`
+    ${({theme}) => css`
+        ${theme.mixins.bodyStyle}
+        color: #f4f5f9;
+        line-height: 1.5rem;
+        margin: 1rem .6rem;
+    `}
 `;
 
 export const TitleGame = styled.h2`
   ${({ theme }) => css`
     ${theme.mixins.subTitleStyle}
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.25rem;
     color: #f4f5f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
     ::selection {
       background: transparent;
       color: ${theme.colors.textColor};
@@ -77,13 +67,21 @@ export const TitleGame = styled.h2`
   `}
 `;
 
+export const CoverImageGame = styled.img`
+  ${() => css`
+    width: 320px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+  `}
+`;
+
 export const ScoreGame = styled.p`
   ${() => css`
-    position: relative;
-    top: 100px;
-    left: 50%;
-    width: fit-content;
-    font-size: 2rem;
+    text-align: center;
+    margin: .5rem auto;
+    font-size: 1.2rem;
     color: #f4f5f9;
   `}
 `;
@@ -96,7 +94,6 @@ export const InfoSection = styled.section`
     flex-direction: row;
     width: 100%;
     height: auto;
-    margin-top: 1rem;
   `}
 `;
 
