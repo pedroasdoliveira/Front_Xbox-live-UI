@@ -52,7 +52,7 @@ const LibraryAllGames = () => {
                     e.imbScore.toFixed().includes(search.toLowerCase())
                 )
                 .map((game) => (
-                  <CardGames key={game.id} title={game.title}>
+                  <CardGames Route={() => navigate(`/profile/game/${game.id}`)} key={game.id} title={game.title}>
                     <Style.CoverImageGame src={game.coverImageUrl} alt="" />
                     <Style.GenrerGame>
                       {game.genders.map((genrer) => (
@@ -64,7 +64,7 @@ const LibraryAllGames = () => {
                   </CardGames>
                 ))
             : games.map((game) => (
-                <CardGames key={game.id} title={game.title}>
+                <CardGames Route={() => navigate(`/profile/game/${game.id}`)} key={game.id} title={game.title}>
                   <Style.CoverImageGame src={game.coverImageUrl} alt="" />
                   <Style.GenrerGame>
                     {game.genders.map((genrer) => (
