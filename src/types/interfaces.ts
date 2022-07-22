@@ -110,6 +110,24 @@ export interface HomepageTypes {
 }
 
 export interface FavoriteGamesType {
+  favoriteGames: {
+    games: [
+      {
+        title: string;
+        coverImageUrl: string;
+        description: string;
+        imbScore: number;
+        genders: [
+          {
+            name: string;
+          }
+        ];
+      }
+    ];
+  };
+}
+
+export interface GamesProfile {
   games: [
     {
       title: string;
