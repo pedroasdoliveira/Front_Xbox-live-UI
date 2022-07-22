@@ -6,6 +6,7 @@ import { FavoriteGamesType } from "types/interfaces";
 import { HomepageProfile } from 'Service/homepageService'
 import * as Style from "./homepage-style";
 import { Favorite } from "Service/favoriteService";
+import CreateGenrerAdmin from "components/Create/CreateGenre";
 
 const Homepage = () => {
   const {id} = useParams()
@@ -42,7 +43,8 @@ const Homepage = () => {
     <Style.Homepage>
       <ReturnPage Route={() => navigate("/profiles")} />
 
-      <CreateGamesAdmin />
+      <CreateGamesAdmin Route={() => navigate(`/profile/createGames&Genrer/${id}`)} />
+      <CreateGenrerAdmin Route={() => navigate(`/profile/genrers/${id}`)} />
 
       <Style.CardSection>
           {/* {const gameFav = favoriteGames.filter(games => games.favoriteGames.games)} */}
