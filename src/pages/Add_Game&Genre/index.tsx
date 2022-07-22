@@ -53,7 +53,7 @@ const CrudGamesGenrer = () => {
 
   return (
     <Style.Page>
-      <ReturnPage Route={() => navigate("/profiles")} />
+      <ReturnPage Route={() => navigate(-1)} />
 
       <ContainerForm>
         <Style.CoverImgGame
