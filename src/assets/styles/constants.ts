@@ -3,6 +3,7 @@ import XboxWallpaper from 'assets/img/xbox-wallpaper.png'
 import BackIcon from 'assets/icon/Voltar.svg'
 import coolBackground from 'assets/img/cool-background.png'
 import AddGames from 'assets/icon/add_game.svg'
+import Category from 'assets/icon/category.svg'
 
 export const constants = {
     logoFontFamily: 'Roboto, sans-serif',
@@ -23,6 +24,7 @@ export const constants = {
 
     homepageBackground: `url(${coolBackground})`,
     createGamesIcon: `url(${AddGames})`,
+    createGenresIcon: `url(${Category})`,
 
     transitionEvents: 'all ease-in-out .6s',
     transformeScale: 'scale(1.2)'
