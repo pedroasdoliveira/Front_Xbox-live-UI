@@ -1,14 +1,11 @@
 import CreateGamesAdmin from "components/Create/CreateGames";
+import CreateGenrerAdmin from "components/Create/CreateGenre";
 import ReturnPage from "components/ReturnPage";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { FavoriteGamesType } from "types/interfaces";
-import { HomepageProfile } from "Service/homepageService";
-import * as Style from "./homepage-style";
 import { Favorite } from "Service/favoriteService";
-import CreateGenrerAdmin from "components/Create/CreateGenre";
-import { url } from "inspector";
-import CardGames from "components/CardGames/List";
+import { FavoriteGamesType } from "types/interfaces";
+import * as Style from "./homepage-style";
 
 const Homepage = () => {
   const { id } = useParams();
@@ -53,13 +50,16 @@ const Homepage = () => {
       <CreateGenrerAdmin Route={() => navigate(`/profile/genrers/${id}`)} />
 
       <Style.CardSection>
-        {favoriteGames.games.map((game, index) => (
+        {favoriteGames 
+        ? favoriteGames.games.map((game, index) => (
           <Style.ContentCard key={index}>
             <Style.TitleGame>{game.title}</Style.TitleGame>
             <Style.CoverImageGame onClick={() => navigate(`/profile/game/${game.id}`)} src={game.coverImageUrl} alt={'image de fundo do jogo' + game.title} />
             <Style.ScoreGame>{game.imbScore}</Style.ScoreGame>
           </Style.ContentCard>
-        ))}
+        ))
+        : '' 
+      }
       </Style.CardSection>
 
       <Style.InfoSection>
