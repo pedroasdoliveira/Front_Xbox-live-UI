@@ -12,6 +12,7 @@ import GamesList from "pages/ListGames/Games";
 import LibraryAllGames from "pages/LibraryGames";
 import CrudGenrer from 'pages/Create&updateGenre/index';
 import GameDefinitions from "pages/GameDefinitions";
+import EditGameId from "pages/Edit_Game";
 
 const Router = () => {
   return useRoutes([
@@ -62,6 +63,10 @@ const Router = () => {
     {
       path: RoutesPath.GAME_DEFINITIONS,
       element: <GameDefinitions />
+    },
+    {
+      path: RoutesPath.EDIT_GAME,
+      element: <EditGameId />
     }
   ]);
 };

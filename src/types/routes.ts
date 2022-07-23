@@ -11,4 +11,5 @@ export enum RoutesPath {
     CREATE_GAMES = '/profile/createGames&Genrer/:id',
     CREATE_GENRES = '/profile/genrers/:id',
     GAME_DEFINITIONS = '/profile/game/:id',
+    EDIT_GAME = '/profile/game/edit/:id',
 }
