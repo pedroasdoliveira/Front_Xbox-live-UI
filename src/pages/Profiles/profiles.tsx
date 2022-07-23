@@ -7,9 +7,15 @@ import * as Style from "./profiles-style";
 const Profiles = () => {
   const navigate = useNavigate();
 
+  const handleNavigateHome = () => {
+    localStorage.removeItem('userId')
+    localStorage.removeItem('jwt')
+    navigate('/')
+  }
+
   return (
     <Style.Background>
-      <ReturnPage Route={() => navigate('/')} />
+      <ReturnPage Route={handleNavigateHome} />
 
       <Style.ProfileSection>
         <ProfilesCards />
