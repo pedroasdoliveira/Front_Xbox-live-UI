@@ -29,9 +29,21 @@ const DeleteProfileBtn = () => {
     }
   };
 
+  const openModalDelete = () => {
+    swal({
+      title: "Apagar Personagem?",
+      icon: "warning",
+      buttons: ["Não", "Sim"],
+    }).then((resp) => {
+      if (resp) {
+        handleDeleteProfile(); // FUNCAO QUE DELETA
+      }
+    });
+  }
+
   return (
     <>
-      <Style.DeleteProfileBtn type="button" onClick={handleDeleteProfile}>
+      <Style.DeleteProfileBtn type="button" onClick={openModalDelete}>
         Deletar
       </Style.DeleteProfileBtn>
     </>
