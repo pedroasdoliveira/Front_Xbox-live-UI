@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import { RegisterUser } from 'types/interfaces'
 import { RegisterService } from 'Service/authService'
 import swal from 'sweetalert'
+import ReturnPage from 'components/ReturnPage'
 
 const SingUp = () => {
   const navigate = useNavigate()
@@ -42,7 +43,6 @@ const SingUp = () => {
 
     const jwt = response.data.token;
 
-    console.log(jwt)
     if (!jwt) {
       swal({
         title: 'Error!',
@@ -65,9 +65,7 @@ const SingUp = () => {
   return (
     <Style.Singup>
 
-    <Link to={'/login'}>
-      <Style.SingupBack src={Back} alt="Icone de voltar" />
-    </Link>
+    <ReturnPage Route={() => navigate(-1)} />
 
     <Style.SingupLogo src={XboxLogo} alt="Logo Xbox" />
 
