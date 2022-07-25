@@ -1,6 +1,7 @@
 import CreateGamesAdmin from "components/Create/CreateGames";
 import CreateGenrerAdmin from "components/Create/CreateGenre";
 import ReturnPage from "components/ReturnPage";
+import ReactStars from "react-stars";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Favorite } from "Service/favoriteService";
@@ -14,7 +15,7 @@ const Homepage = () => {
   const [favoriteGames, setFavoriteGames] = useState<FavoriteGamesType>({
     games: [
       {
-        id: '',
+        id: "",
         title: "",
         coverImageUrl: "",
         description: "",
@@ -50,16 +51,27 @@ const Homepage = () => {
       <CreateGenrerAdmin Route={() => navigate(`/profile/genrers/${id}`)} />
 
       <Style.CardSection>
-        {favoriteGames 
-        ? favoriteGames.games.map((game, index) => (
-          <Style.ContentCard key={index}>
-            <Style.TitleGame>{game.title}</Style.TitleGame>
-            <Style.CoverImageGame onClick={() => navigate(`/profile/game/${game.id}`)} src={game.coverImageUrl} alt={'image de fundo do jogo' + game.title} />
-            <Style.ScoreGame>{game.imbScore}</Style.ScoreGame>
-          </Style.ContentCard>
-        ))
-        : '' 
-      }
+        {favoriteGames
+          ? favoriteGames.games.map((game, index) => (
+              <Style.ContentCard key={index}>
+                <Style.TitleGame>{game.title}</Style.TitleGame>
+                <Style.CoverImageGame
+                  onClick={() => navigate(`/profile/game/${game.id}`)}
+                  src={game.coverImageUrl}
+                  alt={"image de fundo do jogo" + game.title}
+                />
+                <Style.ScoreGame>
+                  <ReactStars
+                    count={5}
+                    value={game.imbScore}
+                    edit={false}
+                    size={35}
+                    color2={"#ffd700"}
+                  />
+                </Style.ScoreGame>
+              </Style.ContentCard>
+            ))
+          : ""}
       </Style.CardSection>
 
       <Style.InfoSection>

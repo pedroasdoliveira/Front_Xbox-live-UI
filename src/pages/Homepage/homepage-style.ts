@@ -36,7 +36,7 @@ export const CardSection = styled.section`
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 3.5rem;
+    gap: 2rem;
     width: 100%;
     height: auto;
   `}
@@ -69,7 +69,7 @@ export const TitleGame = styled.h2`
 
 export const CoverImageGame = styled.img`
   ${() => css`
-    width: 320px;
+    width: 350px;
     height: 400px;
     margin: 0 auto;
     border-radius: 10px;
@@ -77,12 +77,11 @@ export const CoverImageGame = styled.img`
   `}
 `;
 
-export const ScoreGame = styled.p`
+export const ScoreGame = styled.div`
   ${() => css`
-    text-align: center;
-    margin: .5rem auto;
-    font-size: 1.2rem;
-    color: #f4f5f9;
+    display: flex;
+    justify-content: center;
+    margin: .6rem auto;
   `}
 `;
 
