@@ -3,6 +3,7 @@ import GenrerOption from "components/GenrerOption/GenrerOption";
 import ReturnPage from "components/ReturnPage";
 import SearchGames from "components/Search/Games";
 import React, { useEffect, useState } from "react";
+import ReactStars from "react-stars";
 import { useNavigate } from "react-router-dom";
 import { GetGames } from "Service/gamesService";
 import { GamesTypes } from "types/interfaces";
@@ -52,27 +53,47 @@ const LibraryAllGames = () => {
                     e.imbScore.toFixed().includes(search.toLowerCase())
                 )
                 .map((game) => (
-                  <CardGames Route={() => navigate(`/profile/game/${game.id}`)} key={game.id} title={game.title}>
+                  <CardGames
+                    Route={() => navigate(`/profile/game/${game.id}`)}
+                    key={game.id}
+                    title={game.title}
+                  >
                     <Style.CoverImageGame src={game.coverImageUrl} alt="" />
                     <Style.GenrerGame>
-                      {game.genders.map((genrer) => (
+                      {game.genders?.map((genrer) => (
                         <span key={genrer.id}>{genrer.name}</span>
                       ))}
                     </Style.GenrerGame>
                     <p>{game.year}</p>
-                    <p>{game.imbScore}</p>
+                    <ReactStars
+                      count={5}
+                      value={game.imbScore}
+                      edit={false}
+                      size={35}
+                      color2={"#ffd700"}
+                    />
                   </CardGames>
                 ))
             : games.map((game) => (
-                <CardGames Route={() => navigate(`/profile/game/${game.id}`)} key={game.id} title={game.title}>
+                <CardGames
+                  Route={() => navigate(`/profile/game/${game.id}`)}
+                  key={game.id}
+                  title={game.title}
+                >
                   <Style.CoverImageGame src={game.coverImageUrl} alt="" />
                   <Style.GenrerGame>
-                    {game.genders.map((genrer) => (
+                    {game.genders?.map((genrer) => (
                       <span key={genrer.id}>{genrer.name}</span>
                     ))}
                   </Style.GenrerGame>
                   <p>{game.year}</p>
-                  <p>{game.imbScore}</p>
+                  <ReactStars
+                    count={5}
+                    value={game.imbScore}
+                    edit={false}
+                    size={35}
+                    color2={"#ffd700"}
+                  />
                 </CardGames>
               ))}
         </Style.ContainerCard>

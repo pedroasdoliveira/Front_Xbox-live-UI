@@ -58,7 +58,7 @@ export const ContainerCard = styled.section`
 
 export const CoverImageGame = styled.img`
   ${() => css`
-    width: 320px;
+    width: 350px;
     height: 400px;
     margin: 0 auto;
     border-radius: 10px;
@@ -69,7 +69,7 @@ export const GenrerGame = styled.div`
   ${() => css`
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-top: 0.5rem;
   `}
 `;
