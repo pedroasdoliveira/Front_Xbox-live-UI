@@ -1,6 +1,6 @@
 import Api from "./api";
 import swal from "sweetalert";
-import { CreateGameType } from "types/interfaces";
+import { CreateGameType, GamesTypes } from "types/interfaces";
 
 export const GetGames = {
   AllGames: async () => {
