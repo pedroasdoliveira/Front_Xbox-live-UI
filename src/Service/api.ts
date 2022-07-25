@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Api = axios.create({
-    baseURL: 'https://xbox-live-production.up.railway.app/'
+    baseURL: 'https://xbox-live-serve.herokuapp.com/'
 })
 
 Api.interceptors.request.use((config: any) => {
