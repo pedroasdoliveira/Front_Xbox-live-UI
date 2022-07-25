@@ -1,5 +1,6 @@
 import ReturnPage from 'components/ReturnPage'
 import Edit from "assets/icon/edit_profile.svg";
+import {AiOutlineDelete} from 'react-icons/ai'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { GetGames } from 'Service/gamesService'
@@ -27,7 +28,14 @@ const GameDefinitions = () => {
     }
 
   return (
-    <Style.MainPage>
+    <Style.MainPage 
+        style={{
+            backgroundImage: `url(${gameId?.coverImageUrl})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+        }}
+    >
         <ReturnPage Route={() => navigate(-1)}/>
         
         <Style.Header>
@@ -50,7 +58,12 @@ const GameDefinitions = () => {
                     <MdFavoriteBorder />
                 </Style.FavoriteIcon>
 
-                <Style.EditGame src={Edit} onClick={() => navigate(`/profile/game/edit/${id}`)}/>
+                <Style.DivMethods>
+                    <Style.EditGame src={Edit} onClick={() => navigate(`/profile/game/edit/${id}`)}/>
+                    <Style.DeleteGame>
+                        <AiOutlineDelete />
+                    </Style.DeleteGame>
+                </Style.DivMethods>
             </Style.ContainerInfos>
         </Style.Header>
 

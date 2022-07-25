@@ -13,7 +13,6 @@ export const MainPage = styled.main`
     cursor: default;
     display: grid;
     justify-items: center;
-    
   `}
 `;
 
@@ -68,11 +67,33 @@ export const ScoreGame = styled.p`
 export const FavoriteIcon = styled.i`
   ${() => css`
     font-size: 2.5rem;
-    color: #B8000C;
+    color: #b8000c;
     cursor: pointer;
     transition: all ease-in-out 0.4s;
     :hover {
       transform: scale(1.2);
+    }
+  `}
+`;
+
+export const DivMethods = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 2rem;
+  `}
+`;
+
+export const DeleteGame = styled.i`
+  ${({ theme }) => css`
+    font-size: 2.5rem;
+    color: #f4f5f9;
+    cursor: pointer;
+    transition: ${theme.constants.transitionEvents};
+    :hover {
+      transform: ${theme.constants.transformeScale};
     }
   `}
 `;
@@ -107,4 +128,4 @@ export const GameDescription = styled.p`
     text-align: center;
     color: #f4f5f9;
   `}
-`
+`;
