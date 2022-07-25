@@ -37,9 +37,9 @@ export interface GamesTypes {
   imbScore: number;
   trailerYoutubeUrl: string;
   gameplayYouTubeUrl: string;
-  genders: [
+  genders?: [
     {
-      id: string;
+      id?: string;
       name: string;
     }
   ];
@@ -160,17 +160,15 @@ export interface FavoriteGamesType {
 }
 
 export interface GamesProfile {
-  games: [
+  id?: string;
+  title: string;
+  coverImageUrl: string;
+  description: string;
+  imbScore: number;
+  year: number;
+  genders: [
     {
-      title: string;
-      coverImageUrl: string;
-      description: string;
-      imbScore: number;
-      genders: [
-        {
-          name: string;
-        }
-      ];
+      name: string;
     }
   ];
 }
