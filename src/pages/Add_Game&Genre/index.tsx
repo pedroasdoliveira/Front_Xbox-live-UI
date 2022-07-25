@@ -72,7 +72,7 @@ const CrudGamesGenrer = () => {
 
           <Style.InputCreate
             type="text"
-            placeholder="Url da capa do jogo"
+            placeholder="Url da capa do jogo (1920X1080)"
             name="coverImageUrl"
             id="coverImageUrl"
             onChange={handleValues}
