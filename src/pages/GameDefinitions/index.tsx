@@ -22,7 +22,6 @@ const GameDefinitions = () => {
     const GetGameId = async () => {
         if (id) {
             const payloadGameId = await GetGames.GameById(id)
-            console.log(payloadGameId?.data)
             setGameId(payloadGameId?.data);
         }
     }
