@@ -47,7 +47,9 @@ export const ContentCard = styled.div`
         cursor: pointer;
         p {
             line-height: 1.75rem;
-            margin: .3rem auto;
+            text-align: center;
+            margin: .6rem auto;
         }
+        
     `}
 `
