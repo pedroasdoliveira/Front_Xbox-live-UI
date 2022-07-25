@@ -69,7 +69,9 @@ export const GenrerGame = styled.div`
   ${() => css`
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 0 .6rem;
     margin-top: .5rem;
   `}
 `
