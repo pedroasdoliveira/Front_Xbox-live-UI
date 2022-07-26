@@ -41,8 +41,6 @@ const EditGameId = () => {
         genreGame: payloadId?.data.genders[0].name,
       };
 
-      console.log(payloadId?.data);
-      console.log("Aqui" + gameInfosValues.genreGame);
       setGameInfo({
         ...gameInfo,
         ...gameInfosValues,
