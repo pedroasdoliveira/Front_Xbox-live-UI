@@ -6,6 +6,7 @@ import { UserLogin } from "types/interfaces";
 import React, { useState } from "react";
 import { loginService } from "Service/authService";
 import swal from "sweetalert";
+import ReturnPage from "components/ReturnPage";
 
 const Login = () => {
   const navigation = useNavigate();
@@ -54,6 +55,7 @@ const Login = () => {
   return (
     <Style.Login>
       <main>
+        <ReturnPage Route={() => navigation('/')} />
         <Style.LoginLogo src={XboxLogo} alt="Logo Xbox" />
         <Style.LoginSection>
           <Style.LoginContent onSubmit={handleLogin}>
