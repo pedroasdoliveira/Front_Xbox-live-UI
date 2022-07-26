@@ -5,14 +5,15 @@ import { ReactNode } from 'react';
 interface CardProps {
     title: string;
     children: ReactNode;
-    Route: () => void
+    Route: () => void;
+    Favorite: () => void;
 }
 
 const CardGames = (props: CardProps) => {
   return (
     <Style.Card>
         <Style.IconContainer>
-            <Style.Icon><MdFavoriteBorder /></Style.Icon>
+            <Style.Icon onClick={props.Favorite}><MdFavoriteBorder /></Style.Icon>
         </Style.IconContainer>
 
         <Style.TitleGame>{props.title}</Style.TitleGame>
