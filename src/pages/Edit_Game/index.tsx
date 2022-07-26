@@ -51,10 +51,18 @@ const EditGameId = () => {
   };
 
   const handleChangesValues = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setGameInfo((values: CreateGameType) => ({
-      ...values,
-      [e.target.name]: e.target.value,
-    }));
+    if (e.target.name === 'year' || e.target.name ==='imbScore') {
+      setGameInfo((value: CreateGameType) => ({
+        ...value,
+        [e.target.name]: parseInt(e.target.value)
+      }));
+    } 
+    else {
+      setGameInfo((value: CreateGameType) => ({
+        ...value,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   const handleEditGameInfos = async (e: React.FormEvent<HTMLFormElement>) => {
