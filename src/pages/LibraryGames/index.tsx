@@ -28,6 +28,10 @@ const LibraryAllGames = () => {
     setSearch(e.target.value);
   };
 
+  const handleFavoriteGame = () => {
+    
+  }
+
   return (
     <Style.LibraryGames>
       <ReturnPage Route={() => navigate(-1)} />
@@ -54,6 +58,7 @@ const LibraryAllGames = () => {
                 )
                 .map((game) => (
                   <CardGames
+                    Favorite={handleFavoriteGame}
                     Route={() => navigate(`/profile/game/${game.id}`)}
                     key={game.id}
                     title={game.title}
@@ -76,6 +81,7 @@ const LibraryAllGames = () => {
                 ))
             : games.map((game) => (
                 <CardGames
+                  Favorite={handleFavoriteGame}
                   Route={() => navigate(`/profile/game/${game.id}`)}
                   key={game.id}
                   title={game.title}
