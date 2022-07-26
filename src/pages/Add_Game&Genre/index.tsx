@@ -22,16 +22,23 @@ const CrudGamesGenrer = () => {
   });
 
   const handleValues = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setGame((value: CreateGameType) => ({
-      ...value,
-      [e.target.name]: e.target.value,
-    }));
+    if (e.target.name === "year" || e.target.name === "imbScore") {
+      setGame((value: CreateGameType) => ({
+        ...value,
+        [e.target.name]: parseInt(e.target.value),
+      }));
+    } else {
+      setGame((value: CreateGameType) => ({
+        ...value,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   const handleCreateGame = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const payloadGame = await GetGames.CreateGame(game)
+    const payloadGame = await GetGames.CreateGame(game);
 
     if (payloadGame) {
       swal({
@@ -39,17 +46,16 @@ const CrudGamesGenrer = () => {
         icon: "success",
         timer: 6000,
       });
-      console.log(payloadGame.data)
-    }
-    else {
+      console.log(payloadGame.data);
+    } else {
       swal({
         title: "Error ao cadastrar o jogo",
         icon: "error",
         timer: 6000,
       });
-      console.log(payloadGame)
+      console.log(payloadGame);
     }
-  }
+  };
 
   return (
     <Style.Page>
@@ -133,7 +139,7 @@ const CrudGamesGenrer = () => {
             required
           />
 
-          <Style.CreateBtn type='submit'>Cadastrar jogo</Style.CreateBtn>
+          <Style.CreateBtn type="submit">Cadastrar jogo</Style.CreateBtn>
         </Style.Form>
       </ContainerForm>
     </Style.Page>
