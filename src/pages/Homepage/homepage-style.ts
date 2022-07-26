@@ -20,6 +20,48 @@ export const Homepage = styled.main`
   `}
 `;
 
+export const AdminProfileInfos = styled.div`
+  ${() => css`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem 0;
+    position: absolute;
+    top: 15px;
+    left: 100px;
+  `}
+`;
+
+export const ProfileImg = styled.img`
+  ${() => css`
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #000;
+    transition: all ease-in-out .6s;
+    :hover {
+      transform: scale(1.2);
+    }
+  `}
+`;
+
+export const ProfileName = styled.p`
+  ${({theme}) => css`
+    ${theme.mixins.bodyStyle}
+    text-align: center;
+    color: #f4f5f9;
+  `}
+`
+
+export const AdminDiv = styled.div`
+  ${() => css`
+    display: flex;
+    justify-content: flex-end;
+  `}
+`
+
 export const CardSection = styled.section`
   ${() => css`
     /* display: grid;
@@ -39,6 +81,7 @@ export const CardSection = styled.section`
     gap: 2rem;
     width: 100%;
     height: auto;
+    margin-top: 5rem;
   `}
 `;
 
