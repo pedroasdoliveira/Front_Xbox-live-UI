@@ -56,7 +56,7 @@ const GameDefinitions = () => {
       } else {
         swal({
           title: "Error",
-          text: "Não foi possivel deletar o jogo!",
+          text: "Não é possivel deletar o jogo!",
           icon: "error",
           timer: 6000,
         });
