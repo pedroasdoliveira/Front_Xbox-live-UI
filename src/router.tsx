@@ -10,9 +10,10 @@ import Homepage from "pages/Homepage/homepage";
 import CrudGamesGenrer from "pages/Add_Game&Genre";
 import GamesList from "pages/ListGames/Games";
 import LibraryAllGames from "pages/LibraryGames";
-import CrudGenrer from 'pages/Create&updateGenre/index';
+import CrudGenrer from "pages/Create&updateGenre/index";
 import GameDefinitions from "pages/GameDefinitions";
 import EditGameId from "pages/Edit_Game";
+import UserConfigs from "pages/UserConfigs";
 
 const Router = () => {
   return useRoutes([
@@ -30,11 +31,11 @@ const Router = () => {
     },
     {
       path: RoutesPath.PROFILES,
-      element: <Profiles />
+      element: <Profiles />,
     },
     {
       path: RoutesPath.CREATE_PROFILES,
-      element: <CreateProfile />
+      element: <CreateProfile />,
     },
     {
       path: RoutesPath.EDIT_PROFILE,
@@ -42,32 +43,36 @@ const Router = () => {
     },
     {
       path: RoutesPath.HOMEPAGE,
-      element: <Homepage />
+      element: <Homepage />,
     },
     {
       path: RoutesPath.GAMES_LIST,
-      element: <GamesList />
+      element: <GamesList />,
     },
     {
       path: RoutesPath.LIBRARY_GAMES,
-      element: <LibraryAllGames />
+      element: <LibraryAllGames />,
     },
     {
       path: RoutesPath.CREATE_GAMES,
-      element: <CrudGamesGenrer />
+      element: <CrudGamesGenrer />,
     },
     {
       path: RoutesPath.CREATE_GENRES,
-      element: <CrudGenrer />
+      element: <CrudGenrer />,
     },
     {
       path: RoutesPath.GAME_DEFINITIONS,
-      element: <GameDefinitions />
+      element: <GameDefinitions />,
     },
     {
       path: RoutesPath.EDIT_GAME,
-      element: <EditGameId />
-    }
+      element: <EditGameId />,
+    },
+    {
+      path: RoutesPath.USER_CONFIGS,
+      element: <UserConfigs />,
+    },
   ]);
 };
 
