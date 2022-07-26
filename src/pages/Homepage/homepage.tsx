@@ -5,12 +5,15 @@ import ReactStars from "react-stars";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Favorite } from "Service/favoriteService";
-import { FavoriteGamesType } from "types/interfaces";
+import { FavoriteGamesType, ProfilesTypes } from "types/interfaces";
 import * as Style from "./homepage-style";
+import { Profiles } from "Service/profileService";
 
 const Homepage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const [profileInfos, setProfileInfos] = useState<ProfilesTypes>()
 
   const [favoriteGames, setFavoriteGames] = useState<FavoriteGamesType>({
     games: [
@@ -31,8 +34,25 @@ const Homepage = () => {
   });
 
   useEffect(() => {
+    profileInfosId();
     profileFavoriteGames();
   }, []);
+
+  const profileInfosId = async () => {
+    if (id) {
+      const getIdProfile = await Profiles.ProfileGetById(id)
+
+      const profileValues = {
+        title: getIdProfile?.data.title,
+        imageUrl: getIdProfile?.data.imageUrl,
+        userId: getIdProfile?.data.userId,
+      }
+
+      setProfileInfos({
+        ...profileValues,
+      })
+    }
+  }
 
   const profileFavoriteGames = async () => {
     if (id) {
@@ -41,14 +61,25 @@ const Homepage = () => {
     }
   };
 
+  const UserConfigsNavigate = () => {
+    navigate(`/user/${profileInfos?.userId}`)
+  }
+
   return (
     <Style.Homepage>
       <ReturnPage Route={() => navigate("/profiles")} />
 
-      <CreateGamesAdmin
-        Route={() => navigate(`/profile/createGames&Genrer/${id}`)}
-      />
-      <CreateGenrerAdmin Route={() => navigate(`/profile/genrers/${id}`)} />
+      <Style.AdminProfileInfos>
+        <Style.ProfileImg src={profileInfos?.imageUrl} alt='Capa do perfil' onClick={UserConfigsNavigate} />
+        <Style.ProfileName>{profileInfos?.title}</Style.ProfileName>
+      </Style.AdminProfileInfos>
+
+      <Style.AdminDiv>
+        <CreateGamesAdmin
+          Route={() => navigate(`/profile/createGames&Genrer/${id}`)}
+        />
+        <CreateGenrerAdmin Route={() => navigate(`/profile/genrers/${id}`)} />
+      </Style.AdminDiv>
 
       <Style.CardSection>
         {favoriteGames
