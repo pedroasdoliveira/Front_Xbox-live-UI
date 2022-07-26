@@ -12,6 +12,23 @@ export interface RegisterUser {
   cpf: string;
 }
 
+export interface GetUserType {
+  id?: string;
+  name: string;
+  nickname: string;
+  email: string;
+  password: string;
+  cpf: string;
+  isAdmin: boolean;
+  profiles?: [
+    {
+      id: string;
+      title: string;
+      imageUrl: string;
+    }
+  ];
+}
+
 export interface UserType {
   name: string;
   nickname: string;
@@ -22,6 +39,7 @@ export interface UserType {
   isAdmin?: boolean;
   profiles?: [
     {
+      id: string;
       title: string;
       imageUrl: string;
     }
@@ -171,4 +189,9 @@ export interface GamesProfile {
       name: string;
     }
   ];
+}
+
+export interface AddFavorite {
+  gameId: string;
+  favoriteGameId: string;
 }
