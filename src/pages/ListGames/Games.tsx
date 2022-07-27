@@ -5,21 +5,16 @@ import SearchGames from "components/Search/Games";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ReactStars from "react-stars";
-import { Favorite } from "Service/favoriteService";
 import { HomepageProfile } from "Service/homepageService";
-import { GamesProfile, AddFavorite } from "types/interfaces";
+import { GamesProfile } from "types/interfaces";
 import * as Style from "./Games-style";
 
 const GamesList = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
+  const {id} = useParams();
 
   const [games, setGames] = useState<GamesProfile[]>([]);
   const [search, setSearch] = useState<string>("");
-  const [favorite, setFavorite] = useState<AddFavorite>({
-    favoriteGameId: '',
-    gameId: '',
-  })
 
   useEffect(() => {
     gamesProfile();
@@ -33,19 +28,9 @@ const GamesList = () => {
     }
   };
 
-  // const favoriteGame = async () => {
-  //   if (id) {
-  //     const payloadFavorite = await Favorite.FavoriteGame(id,)
-  //   }
-  // }
-
   const handleSearchValue = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
-
-  const handleFavoriteGame = () => {
-    
-  }
 
   return (
     <Style.GamesList>
@@ -71,7 +56,7 @@ const GamesList = () => {
                 )
                 .map((game, index) => (
                   <CardGames
-                    Favorite={handleFavoriteGame}
+                    idGame={game.id}
                     Route={() => navigate(`/profile/game/${game.id}`)}
                     key={index}
                     title={game.title}
@@ -94,7 +79,7 @@ const GamesList = () => {
                 ))
             : games.map((game) => (
                 <CardGames
-                  Favorite={handleFavoriteGame}
+                  idGame={game.id}
                   Route={() => navigate(`/profile/game/${game.id}`)}
                   key={game.id}
                   title={game.title}
