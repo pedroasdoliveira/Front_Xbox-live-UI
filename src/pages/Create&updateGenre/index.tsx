@@ -2,8 +2,8 @@ import ReturnPage from 'components/ReturnPage'
 import * as Style from './style'
 import { useNavigate } from 'react-router-dom'
 import ContainerForm from 'components/ContainerForm';
-import React, { useState } from 'react';
-import { CreateGenrerType } from 'types/interfaces';
+import React, { useEffect, useState } from 'react';
+import { CreateGenrerType, GenrerTypes } from 'types/interfaces';
 import { Genrers } from 'Service/genrerService';
 import swal from "sweetalert";
 
@@ -13,6 +13,19 @@ const CrudGenrer = () => {
   const [name, setName] = useState<CreateGenrerType>({
     name: '',
   });
+  const [allName, setAllName] = useState<GenrerTypes[]>([]);
+  
+  useEffect(() => {
+    fecthAllGenrers();
+  }, [])
+
+  const fecthAllGenrers = async () => {
+    const allGenrers = await Genrers.AllGenrers();
+    
+    if (allGenrers) {
+      setAllName(allGenrers.data)
+    }
+  }
 
   const handleValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName((name: CreateGenrerType) => ({
@@ -70,11 +83,13 @@ const CrudGenrer = () => {
           <Style.Form>
 
             <Style.ContainerOption>
-              <Style.OptionSelect>
+              <Style.OptionSelect id='gender'>
                 <Style.Options value='default'>
                   Gênero
                 </Style.Options>
-                <Style.Options value=''>Teste</Style.Options>
+                {allName.map((genrer) => (
+                  <Style.Options key={genrer.id} value=''>{genrer.name}</Style.Options>
+                ))}
               </Style.OptionSelect>
             </Style.ContainerOption>
 
@@ -89,3 +104,15 @@ const CrudGenrer = () => {
 }
 
 export default CrudGenrer
+
+{/* <script type="text/javascript">
+            function update() {
+                var select = document.getElementById('gender');
+                var option = select.options[select.selectedIndex];
+
+                document.getElementById('value').value = option.value;
+                document.getElementById('text').value = option.text;
+            }
+
+            update();
+    </script> */}
