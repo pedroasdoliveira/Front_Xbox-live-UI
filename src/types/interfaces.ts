@@ -192,6 +192,6 @@ export interface GamesProfile {
 }
 
 export interface AddFavorite {
-  gameId: string;
-  favoriteGameId: string;
+  gameId: string | undefined;
+  favoriteGameId: string | undefined;
 }
