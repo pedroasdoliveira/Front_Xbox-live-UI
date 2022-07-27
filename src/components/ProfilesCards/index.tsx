@@ -22,13 +22,20 @@ const ProfilesCards = () => {
     navigate(`/profiles/edit/${id}`)
   }
 
+  const handleNavigateHomepage = (id: string | undefined) => {
+    if (id) {
+      localStorage.setItem('profileId', id)
+      navigate(`/profile/homepage/${id}`)
+    }
+  }
+
   return (
     <div>
       <Styled.ProfileDiv>
         {profiles.map((profile) => (
           <div key={profile.id}>
             <Styled.Profileimg
-              onClick={() => navigate(`/profile/homepage/${profile.id}`)}
+              onClick={() => handleNavigateHomepage(profile.id)}
               src={profile.imageUrl}
               alt="Avatar do usuário"
             />
