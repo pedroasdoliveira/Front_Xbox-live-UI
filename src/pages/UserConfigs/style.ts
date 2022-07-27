@@ -34,3 +34,11 @@ export const Inputs = styled.input`
     ${theme.mixins.bodyStyle}
   `}
 `;
+
+export const Btn = styled.button`
+    ${({theme}) => css`
+        ${theme.mixins.loginButton}
+        margin: .5rem 0;
+        color: #000;
+    `}
+`;
