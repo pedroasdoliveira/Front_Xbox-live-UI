@@ -18,25 +18,21 @@ const CreateProfile = () => {
   });
 
   const handleValues = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setProfile((profile: ProfilesTypes) => ({
-      ...profile,
-      [e.target.name]: e.target.value
-    }))
+    const idUser = localStorage.getItem('userId');
+    
+    if (idUser) {
+      setProfile((profile: ProfilesTypes) => ({
+        ...profile,
+        userId: idUser,
+        [e.target.name]: e.target.value
+      }))
+    }
   }
 
   const handleCreateProfile = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const idUser = localStorage.getItem('userId');
-
-    if (idUser) {
-      setProfile({
-        ...profile,
-        userId: idUser
-      })
-    }
-
-    const payload: any = await Profiles.CreateProfile(profile)
+    const payload = await Profiles.CreateProfile(profile)
 
     if (payload) {
       swal({
