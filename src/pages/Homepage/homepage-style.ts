@@ -26,9 +26,9 @@ export const AdminProfileInfos = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    gap: .5rem 0;
+    gap: 0.5rem 0;
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 100px;
   `}
 `;
@@ -40,7 +40,7 @@ export const ProfileImg = styled.img`
     border-radius: 50%;
     cursor: pointer;
     border: 1px solid #000;
-    transition: all ease-in-out .6s;
+    transition: all ease-in-out 0.6s;
     :hover {
       transform: scale(1.2);
     }
@@ -48,19 +48,23 @@ export const ProfileImg = styled.img`
 `;
 
 export const ProfileName = styled.p`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     ${theme.mixins.bodyStyle}
     text-align: center;
     color: #f4f5f9;
+    ::selection {
+      background: transparent;
+      color: ${theme.colors.textColor};
+    }
   `}
-`
+`;
 
 export const AdminDiv = styled.div`
   ${() => css`
     display: flex;
     justify-content: flex-end;
   `}
-`
+`;
 
 export const CardSection = styled.section`
   ${() => css`
@@ -81,17 +85,17 @@ export const CardSection = styled.section`
     gap: 2rem;
     width: 100%;
     height: auto;
-    margin-top: 5rem;
+    margin-top: 6rem;
   `}
 `;
 
 export const ContentCard = styled.div`
-    ${({theme}) => css`
-        ${theme.mixins.bodyStyle}
-        color: #f4f5f9;
-        line-height: 1.5rem;
-        margin: 1rem .6rem;
-    `}
+  ${({ theme }) => css`
+    ${theme.mixins.bodyStyle}
+    color: #f4f5f9;
+    line-height: 1.5rem;
+    margin: 1rem 0.6rem;
+  `}
 `;
 
 export const TitleGame = styled.h2`
@@ -121,10 +125,14 @@ export const CoverImageGame = styled.img`
 `;
 
 export const ScoreGame = styled.div`
-  ${() => css`
+  ${({theme}) => css`
     display: flex;
     justify-content: center;
-    margin: .6rem auto;
+    margin: 0.6rem auto;
+    ::selection {
+      background: transparent;
+      color: ${theme.colors.textColor};
+    }
   `}
 `;
 
