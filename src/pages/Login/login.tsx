@@ -1,12 +1,12 @@
-import * as Style from "./login-style";
-import XboxLogo from "assets/icon/xbox-logo.svg";
 import Control from "assets/img/controle_xbox.png";
-import { Link, useNavigate } from "react-router-dom";
-import { UserLogin } from "types/interfaces";
+import Logo from 'assets/img/xbox-black-icon.png';
+import ReturnPage from "components/ReturnPage";
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { loginService } from "Service/authService";
 import swal from "sweetalert";
-import ReturnPage from "components/ReturnPage";
+import { UserLogin } from "types/interfaces";
+import * as Style from "./login-style";
 
 const Login = () => {
   const navigation = useNavigate();
@@ -56,7 +56,7 @@ const Login = () => {
     <Style.Login>
       <main>
         <ReturnPage Route={() => navigation('/')} />
-        <Style.LoginLogo src={XboxLogo} alt="Logo Xbox" />
+        <Style.LoginLogo src={Logo} alt="Logo Xbox" />
         <Style.LoginSection>
           <Style.LoginContent onSubmit={handleLogin}>
             <Style.LoginImg src={Control} alt="controle xbox one" />

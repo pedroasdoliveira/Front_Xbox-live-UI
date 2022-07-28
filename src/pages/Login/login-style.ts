@@ -15,13 +15,13 @@ export const Login = styled.section`
 
 export const LoginLogo = styled.img`
     ${() => css`
-        width: 360px;
-        height: 90px;
-        margin-bottom: 3rem;
+        width: 125px;
+        height: auto;
+        margin-bottom: 2rem;
         text-align: center;
         filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
         position: relative;
-        left: 110px;
+        left: 235px;
     `}
 `
 
