@@ -19,7 +19,7 @@ export interface GetUserType {
   email: string;
   password: string;
   cpf: string;
-  isAdmin: boolean;
+  isAdmin?: boolean;
   profiles?: [
     {
       id: string;
