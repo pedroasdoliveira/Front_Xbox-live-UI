@@ -1,5 +1,4 @@
 import theme from "assets/styles/theme";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import Router from "router";
 import { ThemeProvider } from "styled-components";
