@@ -1,13 +1,13 @@
 import CreateGamesAdmin from "components/Create/CreateGames";
 import CreateGenrerAdmin from "components/Create/CreateGenre";
 import ReturnPage from "components/ReturnPage";
-import ReactStars from "react-stars";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ReactStars from "react-stars";
 import { Favorite } from "Service/favoriteService";
+import { Profiles } from "Service/profileService";
 import { FavoriteGamesType, ProfilesTypes } from "types/interfaces";
 import * as Style from "./homepage-style";
-import { Profiles } from "Service/profileService";
 
 const Homepage = () => {
   const { id } = useParams();
@@ -91,6 +91,7 @@ const Homepage = () => {
           onClick={UserConfigsNavigate}
         />
         <Style.ProfileName>{profileInfos?.title}</Style.ProfileName>
+        <Style.ProfileName>{profileInfos.user?.nickname}</Style.ProfileName>
       </Style.AdminProfileInfos>
 
       {profileInfos.user?.isAdmin === true ? (
