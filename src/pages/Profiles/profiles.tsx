@@ -10,6 +10,7 @@ const Profiles = () => {
   const handleNavigateHome = () => {
     localStorage.removeItem('userId')
     localStorage.removeItem('jwt')
+    localStorage.removeItem('profileId')
     navigate('/')
   }
 
