@@ -35,10 +35,27 @@ export const Inputs = styled.input`
   `}
 `;
 
-export const Btn = styled.button`
-    ${({theme}) => css`
-        ${theme.mixins.loginButton}
-        margin: .5rem 0;
-        color: #000;
-    `}
+export const BtnsRequests = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  `}
+`;
+
+export const BtnEdit = styled.button`
+  ${({ theme }) => css`
+    ${theme.mixins.loginButton}
+    margin: .5rem 0;
+    color: #000;
+  `}
+`;
+
+export const BtnDelete = styled.button`
+  ${({ theme }) => css`
+    ${theme.mixins.DeleteButton}
+    margin: .5rem 0;
+    color: #000;
+  `}
 `;
