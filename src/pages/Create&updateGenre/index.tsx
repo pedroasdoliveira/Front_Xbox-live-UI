@@ -55,6 +55,10 @@ const CrudGenrer = () => {
     }
   }
 
+  const takeGenrer = (e: React.SyntheticEvent) => {
+    console.log(e.target)
+  }
+
   return (
     <Style.Page>
       <ReturnPage Route={() => navigate(-1)} />
@@ -88,7 +92,7 @@ const CrudGenrer = () => {
                   Gênero
                 </Style.Options>
                 {allName.map((genrer) => (
-                  <Style.Options key={genrer.id} value=''>{genrer.name}</Style.Options>
+                  <Style.Options key={genrer.id} onClick={takeGenrer} value=''>{genrer.name}</Style.Options>
                 ))}
               </Style.OptionSelect>
             </Style.ContainerOption>
