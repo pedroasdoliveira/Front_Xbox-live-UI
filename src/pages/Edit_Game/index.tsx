@@ -1,10 +1,10 @@
 import ContainerForm from "components/ContainerForm";
 import ReturnPage from "components/ReturnPage";
-import swal from "sweetalert";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { GetGames } from "Service/gamesService";
-import { CreateGameType, GamesTypes } from "types/interfaces";
+import swal from "sweetalert";
+import { CreateGameType } from "types/interfaces";
 import * as Style from "./style";
 
 const EditGameId = () => {
@@ -49,13 +49,12 @@ const EditGameId = () => {
   };
 
   const handleChangesValues = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.name === 'year' || e.target.name ==='imbScore') {
+    if (e.target.name === "year" || e.target.name === "imbScore") {
       setGameInfo((value: CreateGameType) => ({
         ...value,
-        [e.target.name]: parseInt(e.target.value)
+        [e.target.name]: parseInt(e.target.value),
       }));
-    } 
-    else {
+    } else {
       setGameInfo((value: CreateGameType) => ({
         ...value,
         [e.target.name]: e.target.value,
