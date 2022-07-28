@@ -73,7 +73,7 @@ const CrudGenrer = () => {
               required
             />
 
-            <Style.Btn type='submit'>Adicionar</Style.Btn>
+            <Style.BtnCreate type='submit'>Adicionar</Style.BtnCreate>
           </Style.Form>
         </ContainerForm>
 
@@ -94,8 +94,17 @@ const CrudGenrer = () => {
             </Style.ContainerOption>
 
             <Style.Input 
-              
+              type='text'
+              placeholder=' Editar ou deletar Gênero'
+              name='name'
+              id='name'
+              required
             />
+
+            <Style.BtnsRequests>
+              <Style.BtnEdit type='submit'>Editar</Style.BtnEdit>
+              <Style.BtnDelete type='button'>Deletar</Style.BtnDelete>
+            </Style.BtnsRequests>
           </Style.Form>
         </ContainerForm>
       </Style.DivContainers>
@@ -115,4 +124,5 @@ export default CrudGenrer
             }
 
             update();
-    </script> */}
+    </script>
+   */}

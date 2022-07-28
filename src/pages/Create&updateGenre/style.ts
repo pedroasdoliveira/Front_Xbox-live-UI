@@ -7,8 +7,8 @@ export const Page = styled.main`
     background-repeat: no-repeat;
     background-size: 100%;
     filter: grayscale(50%);
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     cursor: default;
     ::selection {
       background: transparent;
@@ -23,6 +23,7 @@ export const DivContainers = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 2rem;
+    align-items: center;
   `}
 `;
 
@@ -55,7 +56,7 @@ export const Input = styled.input`
     `}
 `;
 
-export const Btn = styled.button`
+export const BtnCreate = styled.button`
     ${({theme}) => css`
         ${theme.mixins.loginButton}
         color: #000;
@@ -106,4 +107,28 @@ export const GenrerOption = styled.div`
         margin-top: 75px;
         gap: 75px 20px;
     `}
+`;
+
+export const BtnsRequests = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  `}
+`; 
+
+export const BtnEdit = styled.button`
+    ${({theme}) => css`
+      ${theme.mixins.loginButton}
+      background-color: ${theme.colors.primaryBgColor};
+      color: #000;
+    `}
+`;
+
+export const BtnDelete = styled.button`
+  ${({theme}) => css`
+    ${theme.mixins.DeleteButton}
+    color: #000;
+  `}
 `
