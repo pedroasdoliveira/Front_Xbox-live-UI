@@ -1,12 +1,11 @@
-import * as Style from './singup-style'
-import XboxLogo from 'assets/icon/xbox-logo.svg'
-import Back from 'assets/icon/Voltar.svg'
-import { Link, useNavigate } from 'react-router-dom'
-import React, { useState } from 'react'
-import { RegisterUser } from 'types/interfaces'
-import { RegisterService } from 'Service/authService'
-import swal from 'sweetalert'
-import ReturnPage from 'components/ReturnPage'
+import Logo from 'assets/img/xbox-black-icon.png';
+import ReturnPage from 'components/ReturnPage';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { RegisterService } from 'Service/authService';
+import swal from 'sweetalert';
+import { RegisterUser } from 'types/interfaces';
+import * as Style from './singup-style';
 
 const SingUp = () => {
   const navigate = useNavigate()
@@ -67,7 +66,7 @@ const SingUp = () => {
 
     <ReturnPage Route={() => navigate(-1)} />
 
-    <Style.SingupLogo src={XboxLogo} alt="Logo Xbox" />
+    <Style.SingupLogo src={Logo} alt="Logo Xbox" />
 
     <Style.SingupSection>
       <Style.SingupH2>Cadastro de usuário</Style.SingupH2>

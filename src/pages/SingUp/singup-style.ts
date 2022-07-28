@@ -28,9 +28,9 @@ export const SingupBack = styled.img`
 
 export const SingupLogo = styled.img`
   ${() => css`
-    width: 360px;
-    height: 90px;
-    margin-bottom: 3rem;
+    width: 125px;
+    height: auto;
+    margin-bottom: 1rem;
     text-align: center;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
   `}
