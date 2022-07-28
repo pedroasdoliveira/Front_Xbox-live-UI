@@ -17,7 +17,7 @@ export const HomeTitle = styled.h1`
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        color: ${theme.colors.titleColor};
+        color: ${theme.colors.primaryBgColor};
         ${theme.mixins.logoStyle};
     `}
 `;
@@ -35,5 +35,19 @@ export const HomeDescription = styled.p`
     ${({theme}) => css`
         font-style: oblique;
         ${theme.mixins.bodyStyle}
+        color: ${theme.colors.titleColor};
+    `}
+`
+
+export const IconLog = styled.i`
+    ${({theme}) => css`
+        font-size: 3rem;
+        color: ${theme.colors.primaryBgColor};
+        margin: 2rem auto;
+        cursor: pointer;
+        transition: all ease-in-out .6s;
+        :hover {
+            transform: scale(1.2);
+        }
     `}
 `

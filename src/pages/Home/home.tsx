@@ -16,7 +16,7 @@ const Home = () => {
 
       <Style.HomeSection>
         <Style.HomeDescription>Clique no botão abaixo para fazer seu login</Style.HomeDescription>
-        <i><SiXbox onClick={handleNavigate}/></i>
+        <Style.IconLog><SiXbox onClick={handleNavigate}/></Style.IconLog>
       </Style.HomeSection>
     </Style.Home>
   )
