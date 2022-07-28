@@ -14,6 +14,7 @@ const CrudGenrer = () => {
     name: '',
   });
   const [allName, setAllName] = useState<GenrerTypes[]>([]);
+  const [genrerId, setGenrerId] = useState<string>('');
   
   useEffect(() => {
     fecthAllGenrers();
@@ -24,6 +25,16 @@ const CrudGenrer = () => {
     
     if (allGenrers) {
       setAllName(allGenrers.data)
+    }
+  }
+
+  const fechtGenrerId = async (id: string) => {
+    const genrer = await Genrers.GetGenrerById(id)
+
+    if (genrer) {
+      setName({
+        name: genrer.data.name
+      })
     }
   }
 
@@ -55,8 +66,49 @@ const CrudGenrer = () => {
     }
   }
 
-  const takeGenrer = (e: React.SyntheticEvent) => {
-    console.log(e.target)
+  const editGenrer = async () => {
+    const payloadEdit = await Genrers.EditGenrer(genrerId, name)
+
+    if (payloadEdit) {
+      swal({
+        title: "Gênero editado com sucesso!",
+        icon: "success",
+        timer: 6000,
+      });
+      fecthAllGenrers();
+    }
+    else {
+      swal({
+        title: "Error ao editar gênero!",
+        icon: "error",
+        timer: 6000,
+      });
+    }
+  }
+
+  const deleteGenrer = async () => {
+    const payloadDelete = await Genrers.DeleteGenrer(genrerId)
+
+    if (payloadDelete) {
+      swal({
+        title: "Gênero deletado com sucesso!",
+        icon: "success",
+        timer: 6000,
+      });
+      fecthAllGenrers();
+    }
+    else {
+      swal({
+        title: "Error ao deletar gênero!",
+        icon: "error",
+        timer: 6000,
+      });
+    }
+  }
+
+  const takeGenrer = (e: React.ChangeEvent<any>) => {
+    setGenrerId(e.target.value)
+    fechtGenrerId(e.target.value)
   }
 
   return (
@@ -87,12 +139,12 @@ const CrudGenrer = () => {
           <Style.Form>
 
             <Style.ContainerOption>
-              <Style.OptionSelect id='gender'>
+              <Style.OptionSelect onChange={takeGenrer} id='gender'>
                 <Style.Options value='default'>
                   Gênero
                 </Style.Options>
                 {allName.map((genrer) => (
-                  <Style.Options key={genrer.id} onClick={takeGenrer} value=''>{genrer.name}</Style.Options>
+                  <Style.Options key={genrer.id} value={genrer.id}>{genrer.name}</Style.Options>
                 ))}
               </Style.OptionSelect>
             </Style.ContainerOption>
@@ -102,12 +154,14 @@ const CrudGenrer = () => {
               placeholder=' Editar ou deletar Gênero'
               name='name'
               id='name'
+              value={name.name}
+              onChange={(e: React.ChangeEvent<any>) => setName({name: e.target.value})}
               required
             />
 
             <Style.BtnsRequests>
-              <Style.BtnEdit type='submit'>Editar</Style.BtnEdit>
-              <Style.BtnDelete type='button'>Deletar</Style.BtnDelete>
+              <Style.BtnEdit type='button' onClick={editGenrer}>Editar</Style.BtnEdit>
+              <Style.BtnDelete type='button' onClick={deleteGenrer}>Deletar</Style.BtnDelete>
             </Style.BtnsRequests>
           </Style.Form>
         </ContainerForm>
